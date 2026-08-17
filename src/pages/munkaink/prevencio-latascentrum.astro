@@ -1,0 +1,219 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const problems = [
+  { icon: 'M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z', title: 'Broken linkek és képek', text: 'A weboldal évek óta nem volt karbantartva — több link és kép egyáltalán nem töltött be.' },
+  { icon: 'M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM14 13a1 1 0 011-1h4a1 1 0 011 1v6a1 1 0 01-1 1h-4a1 1 0 01-1-1v-6z', title: 'Szétcsúszott elrendezés', text: 'A nem karbantartott, nem optimalizált oldal vizuálisan is teljesen szétesett.' },
+  { icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14M14 8h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z', title: 'A hero-kép nem töltött be', text: 'Az első benyomást adó, legfontosabb vizuális elem hibásan jelent meg — vagy egyáltalán nem.' },
+];
+
+const stats = [
+  { value: 89, suffix: '', label: 'Megújított aloldal' },
+  { value: 200, suffix: '/oldal', label: 'Szóbővítés' },
+  { value: 32, suffix: '%', label: 'Teljesítménybeli javulás' },
+  { value: 250, suffix: '%', label: 'Jobb első benyomás' },
+];
+---
+
+<Layout
+  title="Prevenció Látásközpont | Munkáink"
+  description="Amikor a weboldal első benyomása többet árt, mint egy csukott ajtó."
+>
+  <!-- FEJLÉC + SZÁMLÁLÓK -->
+  <section class="border-b border-line bg-base py-24">
+    <div class="mx-auto grid max-w-5xl items-center gap-16 px-6 md:grid-cols-2">
+      <div>
+        <a href="/munkaink" class="inline-flex items-center gap-2 text-sm text-muted transition-colors duration-300 ease-out hover:text-white">
+          <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M9.7 16.7a1 1 0 01-1.4 0l-5-5a1 1 0 010-1.4l5-5a1 1 0 011.4 1.4L6.4 10l3.3 3.3a1 1 0 010 1.4z" clip-rule="evenodd" /></svg>
+          Vissza a munkáinkhoz
+        </a>
+
+        <span class="mt-6 block text-xs font-semibold uppercase tracking-wider text-accent">Weboldal megújítás</span>
+        <h1 class="mt-2 text-4xl font-bold text-white md:text-5xl">Prevenció Látásközpont</h1>
+        <p class="mt-4 text-lg text-muted">
+          Amikor a weboldal első benyomása többet árt, mint egy csukott ajtó.
+        </p>
+
+        <div class="mt-6 flex flex-wrap gap-x-8 gap-y-2 text-sm text-muted">
+          <span><span class="text-white">Iparág:</span> Egészségügy, látáscentrum</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="stat-carousel relative h-32">
+          {stats.map((stat, index) => (
+            <div class:list={["stat-slide absolute inset-0 flex flex-col items-end justify-center text-right", { "is-active": index === 0 }]} data-index={index}>
+              <p class="stat-number text-5xl font-bold text-accent md:text-6xl" data-target={stat.value} data-suffix={stat.suffix}>{`0${stat.suffix}`}</p>
+              <p class="mt-3 text-sm text-muted">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEGKERESÉS -->
+  <section class="bg-base py-20">
+    <div class="mx-auto max-w-4xl px-6">
+      <div class="grid gap-10 md:grid-cols-[1fr_2fr]">
+        <div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-accent">A kiindulási helyzet</span>
+          <h2 class="mt-2 text-2xl font-bold text-white">Egy tizedmásodperc, ami mindent eldönt</h2>
+        </div>
+        <div class="space-y-4 text-muted">
+          <p>
+            Egy látáscentrum esetében a bizalom a legfontosabb tényező — hiszen a
+            látogató a saját egészségét, a szemét bízza a szakemberre. A kutatások szerint
+            az emberek töredékmásodperc alatt formálják meg az első benyomásukat egy
+            weboldalról, és ez az első benyomás dönti el, maradnak-e, vagy inkább tovább
+            keresnek.
+          </p>
+          <p>
+            A Prevenció Látásközpont weboldala évek óta nem volt karbantartva. Ennek
+            eredményeként az oldalon több törött link és hibásan betöltő kép is volt — és
+            ami a legsúlyosabb: maga a hero-kép, a weboldal legfontosabb, első pillanatban
+            látott vizuális eleme sem töltött be megbízhatóan. Egy olyan cégnél, ahol a
+            bizalom mindennél fontosabb, ez pontosan az ellenkező hatást keltette annál,
+            amit egy weboldalnak keltenie kellene.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLÉMÁK - KÁRTYÁK -->
+  <section class="border-t border-line bg-surface/40 py-20">
+    <div class="mx-auto max-w-4xl px-6">
+      <span class="text-xs font-semibold uppercase tracking-wider text-accent">Amivel szembesültünk</span>
+      <h2 class="mt-2 text-2xl font-bold text-white">A régi weboldal állapota</h2>
+
+      <div class="mt-8 grid gap-4 sm:grid-cols-3">
+        {problems.map((item) => (
+          <div class="rounded-2xl border border-line bg-base p-5">
+            <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-accent/10 text-accent">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d={item.icon} /></svg>
+            </div>
+            <h3 class="mt-4 font-semibold text-white">{item.title}</h3>
+            <p class="mt-2 text-sm text-muted">{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- MEGOLDÁS -->
+  <section class="border-t border-line bg-base py-20">
+    <div class="mx-auto max-w-4xl px-6">
+      <div class="grid gap-10 md:grid-cols-[1fr_2fr]">
+        <div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-accent">A megoldás</span>
+          <h2 class="mt-2 text-2xl font-bold text-white">Design, technika és tartalom egyszerre</h2>
+        </div>
+        <div class="space-y-4 text-muted">
+          <p>
+            Mivel az oldal állapota nem indokolt egy teljes staging-alapú, lépésről
+            lépésre haladó technikai átépítést, a megújítást vázlatoldalanként — oldalról
+            oldalra haladva — végeztük el. Ez lehetővé tette, hogy gyorsabban, mégis
+            kontrolláltan jussunk el a végeredményhez.
+          </p>
+          <p>
+            A design mellett technikai fejlesztést és optimalizálást is végeztünk: minden
+            törött linket és képet kijavítottunk, a hero-szekciót — a weboldal
+            legfontosabb, bizalomépítő elemét — stabilan, megbízhatóan betöltődővé
+            tettük, és az oldal teljesítményét is jelentősen javítottuk.
+          </p>
+          <p>
+            A tartalmi munka is kiemelt szerepet kapott: összesen <span class="font-semibold text-white">89 aloldalt</span> újítottunk
+            meg, aloldalanként átlagosan <span class="font-semibold text-white">200 szónyi bővítéssel</span>, hogy a
+            látáscentrum szolgáltatásai részletesebben, szakszerűbben és
+            keresőbarátabban jelenjenek meg.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÖSSZEGZÉS -->
+  <section class="border-t border-line bg-surface/40 py-20">
+    <div class="mx-auto max-w-4xl px-6">
+      <p class="border-l-2 border-accent pl-6 text-xl font-medium leading-relaxed text-white">
+        „Egy látáscentrumnál az első benyomás és a bizalom mindennél fontosabb — a
+        megújítás után a weboldal már azt az érzést kelti, amit a szolgáltatásuk is
+        képvisel: megbízhatóságot."
+      </p>
+      <p class="mt-6 text-muted">
+        A megújítás eredményeként a weboldal teljesítménye 32%-kal javult, az első
+        benyomás pedig mérhetően 250%-kal erősebb lett — vagyis a látogatók sokkal
+        nagyobb eséllyel maradnak az oldalon, és bíznak meg a szolgáltatásban már az első
+        pillanatokban.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="border-t border-line bg-base py-20">
+    <div class="mx-auto max-w-4xl px-6">
+      <div class="rounded-3xl border border-line bg-surface px-8 py-10 text-center sm:px-12">
+        <h2 class="text-2xl font-bold text-white sm:text-3xl">Neked is elkelne egy hasonló megújítás?</h2>
+        <p class="mx-auto mt-3 max-w-md text-sm text-muted">
+          Kérj egy ingyenes állapotfelmérést és árajánlatot — 24 órán belül jelentkezünk.
+        </p>
+        <a href="/#ajanlatkeres" class="mt-6 inline-block rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 ease-out hover:shadow-[0_0_25px_5px_rgba(255,77,46,0.35)]">
+          Ingyenes árajánlatot kérek
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const carousel = document.querySelector('.stat-carousel');
+    if (carousel) {
+      const slides = Array.from(carousel.querySelectorAll('.stat-slide'));
+      let current = 0;
+
+      function countUp(slide) {
+        const numberEl = slide.querySelector('.stat-number');
+        const target = parseInt(numberEl.dataset.target, 10);
+        const suffix = numberEl.dataset.suffix || '';
+        const duration = 3000;
+        let start = null;
+
+        function step(timestamp) {
+          if (!start) start = timestamp;
+          const progress = Math.min((timestamp - start) / duration, 1);
+          const value = Math.floor(progress * target);
+          numberEl.textContent = value + suffix;
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          } else {
+            numberEl.textContent = target + suffix;
+          }
+        }
+        requestAnimationFrame(step);
+      }
+
+      function goTo(index) {
+        const currentSlide = slides[current];
+        const nextSlide = slides[index];
+
+        currentSlide.classList.remove('is-active');
+        currentSlide.classList.add('is-exiting');
+        nextSlide.classList.add('is-active');
+        countUp(nextSlide);
+
+        setTimeout(() => {
+          currentSlide.classList.remove('is-exiting');
+          currentSlide.querySelector('.stat-number').textContent = '0' + currentSlide.querySelector('.stat-number').dataset.suffix;
+        }, 600);
+
+        current = index;
+      }
+
+      countUp(slides[0]);
+
+      setInterval(() => {
+        goTo((current + 1) % slides.length);
+      }, 5000);
+    }
+  </script>
+</Layout>
