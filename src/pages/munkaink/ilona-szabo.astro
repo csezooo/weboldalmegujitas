@@ -1,0 +1,218 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const problems = [
+  { icon: 'M4 4h16v16H4V4zm4 4h8m-8 4h8m-8 4h4', title: 'Csak egy oldal', text: 'A régi WordPress-oldalon egyetlen tartalmas, de önmagában álló szöveges oldal volt — a többi aloldalt a nulláról kellett felépíteni.' },
+  { icon: 'M9 19v-6a2 2 0 012-2h2a2 2 0 012 2v6m-9 0h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z', title: 'Nem volt webshop', text: 'A ruhák egyedi darabjait nem lehetett online megvásárolni, sem böngészni — nem volt sem termékoldal, sem rendelhetőség.' },
+  { icon: 'M13 10V3L4 14h7v7l9-11h-7z', title: 'Elhanyagolt technikai állapot', text: '2022 óta senki nem foglalkozott a rendszerrel — az oldal nagyon lassan töltött be, és SEO-beállítások sem voltak rajta.' },
+];
+
+const stats = [
+  { value: 50, suffix: '+', label: 'Feltöltött termék' },
+  { value: 68, suffix: '%', label: 'Gyorsabb betöltési idő' },
+  { value: 220, suffix: '%', label: 'SEO javulás' },
+];
+---
+
+<Layout
+  title="Szabó Ilona | Munkáink"
+  description="Egy egyoldalas WordPress-sablonból egy teljes weboldal és webshop."
+>
+  <!-- FEJLÉC + SZÁMLÁLÓK -->
+  <section class="border-b border-line bg-base py-24">
+    <div class="mx-auto grid max-w-5xl items-center gap-16 px-6 md:grid-cols-2">
+      <div>
+        <a href="/munkaink" class="inline-flex items-center gap-2 text-sm text-muted transition-colors duration-300 ease-out hover:text-white">
+          <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M9.7 16.7a1 1 0 01-1.4 0l-5-5a1 1 0 010-1.4l5-5a1 1 0 011.4 1.4L6.4 10l3.3 3.3a1 1 0 010 1.4z" clip-rule="evenodd" /></svg>
+          Vissza a munkáinkhoz
+        </a>
+
+        <span class="mt-6 block text-xs font-semibold uppercase tracking-wider text-accent">Weboldal megújítás, webshop</span>
+        <h1 class="mt-2 text-4xl font-bold text-white md:text-5xl">Szabó Ilona</h1>
+        <p class="mt-4 text-lg text-muted">
+          Egy egyoldalas WordPress-sablonból egy teljes weboldal és webshop.
+        </p>
+
+        <div class="mt-6 flex flex-wrap gap-x-8 gap-y-2 text-sm text-muted">
+          <span><span class="text-white">Iparág:</span> Divattervezés, stílustanácsadás</span>
+          <a href="https://ilonaszabo.com/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">ilonaszabo.com</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="stat-carousel relative h-32">
+          {stats.map((stat, index) => (
+            <div class:list={["stat-slide absolute inset-0 flex flex-col items-end justify-center text-right", { "is-active": index === 0 }]} data-index={index}>
+              <p class="stat-number text-5xl font-bold text-accent md:text-6xl" data-target={stat.value} data-suffix={stat.suffix}>{`0${stat.suffix}`}</p>
+              <p class="mt-3 text-sm text-muted">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEGKERESÉS -->
+  <section class="bg-base py-20">
+    <div class="mx-auto max-w-4xl px-6">
+      <div class="grid gap-10 md:grid-cols-[1fr_2fr]">
+        <div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-accent">A kiindulási helyzet</span>
+          <h2 class="mt-2 text-2xl font-bold text-white">Egy márka, ami sokkal többet érdemelt</h2>
+        </div>
+        <div class="space-y-4 text-muted">
+          <p>
+            Szabó Ilona elismert divattervező, akinek a munkája sokkal többről szól, mint
+            ruhák tervezéséről — egy egész életérzésről, ami önbizalmat és elfogadást
+            közvetít a nőknek. Ehhez a márkához azonban a régi weboldal egyáltalán nem
+            illett: egy alapértelmezett WordPress-sablonon futott, weboldalépítő nélkül,
+            és gyakorlatilag egyetlen, hosszú, tartalmas szöveges oldalból állt. A többi
+            aloldalt — a szolgáltatásokat, a portfóliót, a kapcsolatot — a nulláról
+            kellett felépíteni.
+          </p>
+          <p>
+            Termékoldal, webshop vagy bármilyen online rendelhetőség sem létezett — pedig
+            Ilona ruhái egyedi darabok, amikből csak egy készül belőlük. Az egyetlen
+            fennmaradt tartalom a divathét-fellépések bejegyzései voltak.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLÉMÁK - KÁRTYÁK -->
+  <section class="border-t border-line bg-surface/40 py-20">
+    <div class="mx-auto max-w-4xl px-6">
+      <span class="text-xs font-semibold uppercase tracking-wider text-accent">Amivel szembesültünk</span>
+      <h2 class="mt-2 text-2xl font-bold text-white">A régi weboldal állapota</h2>
+
+      <div class="mt-8 grid gap-4 sm:grid-cols-3">
+        {problems.map((item) => (
+          <div class="rounded-2xl border border-line bg-base p-5">
+            <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-accent/10 text-accent">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d={item.icon} /></svg>
+            </div>
+            <h3 class="mt-4 font-semibold text-white">{item.title}</h3>
+            <p class="mt-2 text-sm text-muted">{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- MEGOLDÁS - KÉT LÉPÉSBEN -->
+  <section class="border-t border-line bg-base py-20">
+    <div class="mx-auto max-w-4xl px-6">
+      <div class="grid gap-10 md:grid-cols-[1fr_2fr]">
+        <div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-accent">A megoldás</span>
+          <h2 class="mt-2 text-2xl font-bold text-white">Két lépésben, Ilonával közösen</h2>
+        </div>
+        <div class="space-y-4 text-muted">
+          <p>
+            Első körben egy teljesen új megjelenést hoztunk létre — Ilonával szorosan
+            együttműködve terveztük meg azt a vizuális nyelvet, ami valóban tükrözi a
+            márka önbizalomtól duzzadó, elfogadó karakterét. Ez az alapja annak a
+            weboldalnak, amit ma is látni lehet az oldalon.
+          </p>
+          <p>
+            Ilona kérésére a projekt később bővült: beépítettük a webshop és
+            rendelhetőségi funkciót, hogy a ruháit online is be lehessen mutatni és meg
+            lehessen rendelni. Mivel minden darab egyedi, csak egy készül belőlük, a
+            hagyományos kártyás fizetést szándékosan kivettük a folyamatból — a
+            rendelés így jobban illeszkedik az egyedi, személyes vásárlási élményhez.
+          </p>
+          <p>
+            A technikai oldalon is jelentős munka várt ránk: a WordPress rendszert 2022
+            óta senki nem karbantartotta, ami komoly sebesség-problémákat okozott. A
+            fájlokat minimalizáltuk, a WordPress-t újratelepítettük — mindezt úgy, hogy
+            az oldal élő jelenléte közben nem szenvedett zavart. Emellett az addig
+            hiányzó alapvető SEO-beállításokat is elvégeztük.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÖSSZEGZÉS -->
+  <section class="border-t border-line bg-surface/40 py-20">
+    <div class="mx-auto max-w-4xl px-6">
+      <p class="border-l-2 border-accent pl-6 text-xl font-medium leading-relaxed text-white">
+        „A weboldal ma már nem csak bemutatja Ilona munkáját — el is adja azt. Több mint
+        50 termék került fel a webshopba, amiből eddig 15 ruha kelt el."
+      </p>
+      <p class="mt-6 text-muted">
+        A technikai megújítás is meghozta az eredményét: a betöltési idő 68%-kal csökkent,
+        a weboldal pedig havonta körülbelül 20 000 alkalommal jelenik meg a Google
+        keresési találatai között — szemben a korábbi, havi 3-4 ezres megjelenéssel.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="border-t border-line bg-base py-20">
+    <div class="mx-auto max-w-4xl px-6">
+      <div class="rounded-3xl border border-line bg-surface px-8 py-10 text-center sm:px-12">
+        <h2 class="text-2xl font-bold text-white sm:text-3xl">Neked is elkelne egy hasonló megújítás?</h2>
+        <p class="mx-auto mt-3 max-w-md text-sm text-muted">
+          Kérj egy ingyenes állapotfelmérést és árajánlatot — 24 órán belül jelentkezünk.
+        </p>
+        <a href="/#ajanlatkeres" class="mt-6 inline-block rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 ease-out hover:shadow-[0_0_25px_5px_rgba(255,77,46,0.35)]">
+          Ingyenes árajánlatot kérek
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const carousel = document.querySelector('.stat-carousel');
+    if (carousel) {
+      const slides = Array.from(carousel.querySelectorAll('.stat-slide'));
+      let current = 0;
+
+      function countUp(slide) {
+        const numberEl = slide.querySelector('.stat-number');
+        const target = parseInt(numberEl.dataset.target, 10);
+        const suffix = numberEl.dataset.suffix || '';
+        const duration = 3000;
+        let start = null;
+
+        function step(timestamp) {
+          if (!start) start = timestamp;
+          const progress = Math.min((timestamp - start) / duration, 1);
+          const value = Math.floor(progress * target);
+          numberEl.textContent = value.toLocaleString('hu-HU') + suffix;
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          } else {
+            numberEl.textContent = target.toLocaleString('hu-HU') + suffix;
+          }
+        }
+        requestAnimationFrame(step);
+      }
+
+      function goTo(index) {
+        const currentSlide = slides[current];
+        const nextSlide = slides[index];
+
+        currentSlide.classList.remove('is-active');
+        currentSlide.classList.add('is-exiting');
+        nextSlide.classList.add('is-active');
+        countUp(nextSlide);
+
+        setTimeout(() => {
+          currentSlide.classList.remove('is-exiting');
+          currentSlide.querySelector('.stat-number').textContent = '0' + currentSlide.querySelector('.stat-number').dataset.suffix;
+        }, 600);
+
+        current = index;
+      }
+
+      countUp(slides[0]);
+
+      setInterval(() => {
+        goTo((current + 1) % slides.length);
+      }, 5000);
+    }
+  </script>
+</Layout>
