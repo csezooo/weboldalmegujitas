@@ -1,0 +1,44 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+
+import kep1 from '../assets/kepek/bruno.png';
+import kep2 from '../assets/kepek/en.png';
+
+const images = [kep1, kep2];
+const names = ['Szabó Brúnó', 'Csesznok Andris']
+---
+
+<Layout title="Rólunk | Weboldalmegújítás" description="Ismerd meg, kik állnak a weboldalmegujitas.hu mögött.">
+  <!-- CÍMSOR + SZÖVEG -->
+  <section class="border-b border-line bg-base py-24">
+    <div class="mx-auto max-w-3xl px-6">
+      <h1 class="mt-3 text-4xl font-bold text-white md:text-5xl">
+        Rólunk
+      </h1>
+
+      <div class="mt-8 space-y-5 text-muted">
+        <p>
+          Nem egyik napról a másikra jutottunk el a weboldal-megújításig. Már weboldaltmost.hu néven több mint 70 weboldalt építettünk vállalkozásoknak, sokat jelenleg karban is tartunk közülük. Emellett tartalomgyártással, online marketinggel és mindenféle digitális projekttel foglalkoztunk már. Igazából már az kb mindennel, ami egy vállalkozás online jelenlétéhez kell. 
+          <br><br>Ez alatt az idő alatt egy dolog folyamatosan visszaköszönt: rengeteg vállalkozónál ugyanazt a mintát láttuk. Egy oldal, amit valaha megcsináltak, aztán évekig hozzá sem nyúltak. Közben a vállalkozás fejlődött, a kínálat bővült, a konkurencia modernizálódott — a weboldal viszont ugyanott ragadt, ahol évekkel korábban. Nem egyetlen konkrét eset nyitotta ki a szemünket, hanem az, hogy ez szinte minden második megkeresésnél előjött valamilyen formában.
+          <br><br>Innen jött az ötlet: mi lenne, ha nem újra kellene mindent felépíteni, hanem kifejezetten arra fókuszálnánk, hogy a meglévő weboldalakból hozzuk ki a maximumot? Gyorsabbá, modernebbé, ügyfeleket hozóvá tenni azt, ami már megvan — ahelyett, hogy mindenkit nulláról kezdésre biztatnánk.
+          <br><br>Fél éve váltottunk teljesen erre a fókuszra, és azóta is minden projektnél ugyanaz vezérel minket: nem egy sablon-megoldást akarunk ráhúzni a vállalkozásodra, hanem tényleg megérteni, mivel küzdesz, és onnan elindulva építeni valami olyat, ami hosszú távon is szolgál.
+          <br><br>Ha kíváncsi vagy, korábban milyen weboldalakat készítettünk, szívesen körbevezetünk a weboldaltmost.hu portfólión is.
+        </p>
+      </div>
+    </div>
+
+    <div class="mx-auto mt-25 max-w-150 px-6">
+      <div class="grid gap-6 sm:grid-cols-2">
+        {images.map((img, index) => (
+          <div>
+            <div class="overflow-hidden">
+              <Image src={img} alt={names[index]} class="aspect-square w-full object-cover" />
+            </div>
+            <p class="mt-5 text-center text-sm font-semibold text-white">{names[index]}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
