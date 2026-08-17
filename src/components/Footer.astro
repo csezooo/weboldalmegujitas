@@ -1,0 +1,60 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/kepek/logo.png';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-line bg-base">
+  <div class="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:grid-cols-4">
+    <div>
+      <a href="/" class="flex items-center gap-2">
+        <Image src={logo} alt="Weboldalmegújítás logó" class="h-9 w-auto" />
+      </a>
+      <p class="mt-4 max-w-xs text-sm text-muted">
+        Meglévő weboldalakat újítjuk meg, és alakítunk át gyors, modern és ügyfeleket hozó oldallá.
+      </p>
+    </div>
+
+    <div>
+      <h3 class="text-sm font-semibold uppercase tracking-wide text-white">Gyors linkek</h3>
+      <ul class="mt-4 space-y-3 text-sm text-muted">
+        <li><a href="/" class="hover:text-white">Főoldal</a></li>
+        <li><a href="/rolunk" class="hover:text-white">Rólunk</a></li>
+        <li><a href="/munkaink" class="hover:text-white">Munkáink</a></li>
+        <li><a href="/velemenyek" class="hover:text-white">Vélemények</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-sm font-semibold uppercase tracking-wide text-white">Szolgáltatás</h3>
+      <ul class="mt-4 space-y-3 text-sm text-muted">
+        <li><a href="/karbantartas" class="hover:text-white">Weboldal karbantartás</a></li>
+        <li><a href="/kapcsolat" class="hover:text-white">Kapcsolat</a></li>
+      </ul>
+    </div>
+
+    <div>
+  <h3 class="text-sm font-semibold uppercase tracking-wide text-white">Kapcsolat</h3>
+  <ul class="mt-4 space-y-3 text-sm text-muted">
+    <li>info@weboldalmegujitas.hu</li>
+  </ul>
+
+  <a
+  href="https://www.facebook.com/weboldalmegujitas.hu"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Weboldalmegújítás Facebook oldala"
+    class="mt-5 inline-flex h-9 w-9 items-center justify-center rounded-full border border-line text-muted transition-colors duration-300 ease-out hover:border-accent hover:text-accent"
+  >
+    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z" />
+    </svg>
+  </a>
+</div>
+  </div>
+
+  <div class="border-t border-line px-6 py-6 text-center text-xs text-muted">
+    © {year} weboldalmegujitas.hu | Minden jog fenntartva.
+  </div>
+</footer>

@@ -1,0 +1,64 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/kepek/logo.png';
+
+const navLinks = [
+  { label: 'Főoldal', href: '/' },
+  { label: 'Rólunk', href: '/rolunk' },
+  { label: 'Munkáink', href: '/munkaink' },
+  { label: 'Vélemények', href: '/velemenyek' },
+  { label: 'Kapcsolat', href: '/kapcsolat' },
+];
+
+---
+
+<header class="sticky top-0 z-50 border-b border-line/60 bg-base/80 backdrop-blur-md">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+    <a href="/" class="flex items-center gap-2">
+  <Image src={logo} alt="Weboldalmegújítás logó" class="h-9 w-auto" />
+</a>
+
+    <nav class="hidden items-center gap-8 md:flex">
+      {navLinks.map((link) => (
+        <a 
+          href={link.href}
+          class="relative text-sm font-medium text-white/80 transition-colors hover:text-white after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <a
+      href="#ajanlatkeres"
+      class="hidden rounded-full bg-accent px-5 py-2.5 text-sm text-white transition-all hover:shadow-[0_0_25px_5px_rgba(255,77,46,0.35)] md:inline-block"
+    >
+      Díjmentes árajánlat</a>
+
+    <button id="menu-toggle" class="flex h-10 w-10 items-center justify-center rounded-lg border border-line text-white md:hidden" aria-label="Menü megnyitása">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <nav id="mobile-menu" class="hidden flex-col gap-1 border-t border-line bg-base px-6 py-4 md:hidden">
+    {navLinks.map((link) => (
+      <a href={link.href} class="rounded-lg px-3 py-3 text-sm font-medium text-white/80 hover:bg-surface hover:text-white">
+        {link.label}
+      </a>
+    ))}
+    <a href="#ajanlatkeres" class="mt-2 rounded-full bg-accent px-5 py-3 text-center text-sm font-semibold text-white">
+      Ingyenes árajánlat
+    </a>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  toggle?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+    menu?.classList.toggle('flex');
+  });
+</script>
