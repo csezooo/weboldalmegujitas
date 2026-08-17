@@ -1,0 +1,65 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+
+import ilonaszabo from '../assets/kepek/ilonaszabo.png';
+import idekor from '../assets/kepek/idekor.png';
+import prevenciolatascentrum from '../assets/kepek/prevenciolatascentrum.png';
+import baloglaszlo from '../assets/kepek/baloglaszlo.png';
+import szilanibeauty from '../assets/kepek/szilani-beauty.png';
+// import hatodik from '../assets/kepek/hatodik.png';
+
+const works = [
+  { slug: 'ilona-szabo', title: 'Ilona Szabó', tag: 'Weboldal megújítás', image: ilonaszabo },
+  { slug: 'idekor', title: 'IDekor', tag: 'Weboldal megújítás, SEO', image: idekor },
+  { slug: 'prevencio-latascentrum', title: 'Prevenció Látásközpont', tag: 'Weboldal megújítás', image: prevenciolatascentrum },
+  { slug: 'balog-laszlo', title: 'Balog László', tag: 'Weboldal megújítás', image: baloglaszlo },
+  { slug: 'szilani-beauty', title: 'Szilani Beauty', tag: 'Weboldal megújítás, SEO', image: szilanibeauty },
+  // { slug: 'hatodik-projekt', title: 'Hatodik projekt neve', tag: 'Weboldal megújítás', image: hatodik },
+];
+---
+
+<Layout title="Munkáink | Weboldalmegújítás" description="Nézd meg korábbi weboldal-megújítási projektjeinket.">
+  <section class="bg-base py-24">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mx-auto max-w-2xl text-center">
+        <span class="text-xs font-semibold uppercase tracking-wider text-accent">Munkáink</span>
+        <h1 class="mt-3 text-4xl font-bold text-white md:text-5xl">Korábbi projektjeink</h1>
+        <p class="mt-4 text-muted">
+          Néhány weboldal, amit megújítottunk — modernebb, gyorsabb és ügyfeleket hozó
+          megjelenéssel.
+        </p>
+      </div>
+
+      <div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {works.map((project) => (
+          <a href={`/munkaink/${project.slug}`} class="group block overflow-hidden rounded-2xl border border-line bg-surface transition-colors duration-300 ease-out hover:border-accent/40">
+            <div class="aspect-[4/3] overflow-hidden">
+              <Image
+                src={project.image}
+                alt={project.title}
+                class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+              />
+            </div>
+            <div class="flex items-center justify-between p-5">
+              <div>
+                <h3 class="font-semibold text-white">{project.title}</h3>
+                <p class="mt-1 text-xs text-muted">{project.tag}</p>
+              </div>
+              <svg class="h-4 w-4 shrink-0 text-accent transition-transform duration-300 ease-out group-hover:translate-x-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.3 3.3a1 1 0 011.4 0l5 5a1 1 0 010 1.4l-5 5a1 1 0 01-1.4-1.4L13.6 10 10.3 6.7a1 1 0 010-1.4z" clip-rule="evenodd" /></svg>
+            </div>
+          </a>
+        ))}    
+      </div>
+    <div class="mt-16 rounded-3xl border border-line bg-surface px-8 py-10 text-center sm:px-12">
+        <h2 class="text-2xl font-bold text-white sm:text-3xl">A Te weboldaladra is ráférne egy megújítás?</h2>
+        <p class="mx-auto mt-3 max-w-md text-sm text-muted">
+          Kérj egy díjmentes állapotfelmérést és árajánlatot — 24 órán belül jelentkezünk.
+        </p>
+        <a href="/#ajanlatkeres" class="mt-6 inline-block rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 ease-out hover:shadow-[0_0_25px_5px_rgba(255,77,46,0.35)]">
+          Díjmentes árajánlatot kérek
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
