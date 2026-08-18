@@ -6,14 +6,12 @@ const sections = [
   { id: 'hatalya', label: '1. Az ÁSZF hatálya' },
   { id: 'fogalmak', label: '2. Fogalom-meghatározások' },
   { id: 'alapveto', label: '3. Alapvető rendelkezések' },
-  { id: 'folyamat', label: '4. A szolgáltatás menete' },
-  { id: 'egyuttmukodes', label: '5. Együttműködés' },
-  { id: 'dijelszamolas', label: '6. A vállalkozói díj elszámolása' },
-  { id: 'elallas', label: '7. Elállási jog' },
-  { id: 'tartalmak', label: '8. Tartalmak tulajdonjoga' },
-  { id: 'szoftver', label: '9. Szoftver korlátozása' },
-  { id: 'tulajdonosi-info', label: '10. Tulajdonosi információ' },
-  { id: 'felelosseg', label: '11. Felelősség korlátozása' },
+  { id: 'egyuttmukodes', label: '4. Együttműködés' },
+  { id: 'dijelszamolas', label: '5. A vállalkozói díj elszámolása' },
+  { id: 'elallasi-jog', label: '6. Elállási jog' },
+  { id: 'tartalmak', label: '7. Tartalmak tulajdonjoga' },
+  { id: 'tulajdonosi-info', label: '8. Tulajdonosi információ' },
+  { id: 'felelosseg', label: '9. Felelősség korlátozása' },
 ];
 ---
 
@@ -154,25 +152,8 @@ const sections = [
           </p>
           <p>Az adatvédelmi tájékoztatónk elérhető és letölthető a Weboldalon.</p>
 
-          <!-- 4. A SZOLGÁLTATÁS MENETE (ÚJ, saját javaslat) -->
-          <h2 id="folyamat" class="pt-8 text-2xl font-bold text-white">4. A szolgáltatás menete</h2>
-          <p>
-            A Vállalkozó weboldal-megújítási szolgáltatása alapesetben az alábbi
-            lépésekből áll: (1) a Megrendelő árajánlatot kér a Weboldalon található
-            űrlapon keresztül; (2) a Vállalkozó felméri a Megrendelő jelenlegi
-            weboldalát, és árajánlatot küld; (3) az árajánlat elfogadását követően a
-            Felek egyeztetik a pontos igényeket és a design-koncepciót; (4) a
-            Vállalkozó elkészíti és átadja a megújított weboldalt; (5) igény esetén a
-            Felek külön megállapodás alapján folyamatos karbantartási szolgáltatásban
-            állapodhatnak meg.
-          </p>
-          <p class="text-sm italic">
-            [Ezt a szakaszt érdemes a saját, tényleges munkafolyamatodhoz igazítanod —
-            ez egy általános váz, amit finomíthatsz.]
-          </p>
-
-          <!-- 5. EGYÜTTMŰKÖDÉS -->
-          <h2 id="egyuttmukodes" class="pt-8 text-2xl font-bold text-white">5. Együttműködés</h2>
+          <!-- 4. EGYÜTTMŰKÖDÉS -->
+          <h2 id="egyuttmukodes" class="pt-8 text-2xl font-bold text-white">4. Együttműködés</h2>
           <p>
             A szerződő Felek a szerződés teljesítése érdekében szoros és közvetlen
             kapcsolat formájában működnek együtt. Ennek érdekében kölcsönösen és
@@ -194,8 +175,8 @@ const sections = [
             kizárólagos illetékességét kötik ki.
           </p>
 
-          <!-- 6. DÍJ ELSZÁMOLÁS -->
-          <h2 id="dijelszamolas" class="pt-8 text-2xl font-bold text-white">6. A vállalkozói díj elszámolása</h2>
+          <!-- 5. DÍJ ELSZÁMOLÁS -->
+          <h2 id="dijelszamolas" class="pt-8 text-2xl font-bold text-white">5. A vállalkozói díj elszámolása</h2>
           <p>A vállalkozói díj kifizetése történhet készpénzben vagy banki átutalással, alapesetben 8 munkanapos fizetési határidővel.</p>
           <p>
             A Vállalkozó köteles a számlát vagy díjbekérőt a fizetési esedékesség
@@ -203,27 +184,9 @@ const sections = [
             köteles a számla vagy díjbekérő összegét legkésőbb a fizetési határidő
             napjáig kiegyenlíteni.
           </p>
-          <p>
-            <span class="text-white">Fizetési késedelem:</span> amennyiben a Megrendelő
-            a fizetési határidőt elmulasztja, a Vállalkozó jogosult a szolgáltatás
-            nyújtását a fizetési határidő lejártát követő 14. naptól kezdődően részben
-            vagy egészben szüneteltetni.
-          </p>
-          <p>
-            <span class="text-white">Tartós nemfizetés:</span> amennyiben a Megrendelő
-            a fizetési kötelezettségének a szüneteltetés megkezdésétől számított 2
-            hónapon belül sem tesz eleget, a Vállalkozó jogosult a szolgáltatást
-            véglegesen megszüntetni, valamint a Megrendelőhöz kapcsolódó weboldalt,
-            adatokat és tartalmakat véglegesen törölni.
-          </p>
-          <p>
-            <span class="text-white">Fizetési haladék:</span> a Megrendelő jogosult
-            legfeljebb 7 nap fizetési haladékot kérelmezni, kizárólag a Vállalkozó
-            előzetes írásbeli jóváhagyásával, e-mailben benyújtott kérelem alapján.
-          </p>
 
-          <!-- 7. ELÁLLÁSI JOG (ÚJ, saját javaslat) -->
-          <h2 id="elallas" class="pt-8 text-2xl font-bold text-white">7. Elállási jog</h2>
+          <!-- 6. ELÁLLÁSI JOG (ÚJ, saját javaslat) -->
+          <h2 id="elallas" class="pt-8 text-2xl font-bold text-white">6. Elállási jog</h2>
           <p>
             Amennyiben a Megrendelő a fogyasztóvédelmi jogszabályok szerinti
             fogyasztónak minősül, a 45/2014. (II. 26.) Korm. rendelet alapján a
@@ -234,8 +197,8 @@ const sections = [
             elveszti, amint a szolgáltatás teljesítése megtörtént.
           </p>
 
-          <!-- 8. TARTALMAK TULAJDONJOGA -->
-          <h2 id="tartalmak" class="pt-8 text-2xl font-bold text-white">8. Tartalmak tulajdonjoga</h2>
+          <!-- 7. TARTALMAK TULAJDONJOGA -->
+          <h2 id="tartalmak" class="pt-8 text-2xl font-bold text-white">7. Tartalmak tulajdonjoga</h2>
           <p>
             A Megrendelő elfogadja, hogy a Vállalkozó módosíthatja a meglévő
             tartalmakat a Megrendelő javára. A Megrendelő által biztosított tartalmak a
@@ -245,23 +208,8 @@ const sections = [
             Megrendelő tulajdonát képezik.
           </p>
 
-          <!-- 9. SZOFTVER KORLÁTOZÁSA -->
-          <h2 id="szoftver" class="pt-8 text-2xl font-bold text-white">9. Szoftver korlátozása a Megrendelő részére</h2>
-          <p>
-            A Megrendelő tudomásul veszi, hogy a jelen szerződés keretében biztosított
-            szoftverekhez, rendszerekhez és digitális eszközökhöz kizárólag használati
-            jogosultságot szerez a szerződés időtartamára, azok tulajdonjoga, licence
-            vagy előfizetési joga nem száll át a Megrendelőre.
-          </p>
-          <p>
-            A Megrendelő nem jogosult a Vállalkozó által biztosított rendszerekhez
-            kapcsolódó licencek, előfizetések vagy technikai hozzáférések harmadik fél
-            részére történő átadására, továbbértékesítésére vagy jogosulatlan
-            használatára.
-          </p>
-
-          <!-- 10. TULAJDONOSI INFORMÁCIÓ -->
-          <h2 id="tulajdonosi-info" class="pt-8 text-2xl font-bold text-white">10. Tulajdonosi információ és anyagok használata</h2>
+          <!-- 8. TULAJDONOSI INFORMÁCIÓ -->
+          <h2 id="tulajdonosi-info" class="pt-8 text-2xl font-bold text-white">8. Tulajdonosi információ és anyagok használata</h2>
           <p>
             Mindkét fél által a másik félnek közölt információt bizalmas és
             tulajdonosi jogként kell kezelni. A Felek egyetértenek abban, hogy minden
@@ -288,18 +236,18 @@ const sections = [
             írásbeli megállapodás alapján, egyedi díjazás ellenében kerülhet sor.
           </p>
           <p>
-            <span class="text-white">Szoftver adatkezelése:</span> a Megrendelő
-            tudomásul veszi, hogy a Szoftver-fiókjában rögzített adatok (pl.
-            ügyféladatok, űrlapkitöltések, üzenetek) a Megrendelő adatkezelése alatt
-            állnak. A Vállalkozó a Szoftverhez való hozzáférés biztosítása során
-            adatfeldolgozóként jár el, és az adatokat kizárólag a szolgáltatás
+            <span class="text-white">Rendszerek adatkezelése:</span> a Megrendelő
+            tudomásul veszi, hogy a Szoftver-fiókjában és egyéb adatkezelő rendszerben 
+            rögzített adatok (pl. ügyféladatok, űrlapkitöltések, üzenetek) a Megrendelő 
+            adatkezelése alatt állnak. A Vállalkozó a Szoftverhez való hozzáférés biztosítása 
+            során adatfeldolgozóként jár el, és az adatokat kizárólag a szolgáltatás
             nyújtása érdekében kezeli. A Megrendelő felelős az adatok jogszerű
             kezeléséért és a szükséges hozzájárulások, adatvédelmi nyilatkozatok
             biztosításáért.
           </p>
 
-          <!-- 11. FELELŐSSÉG KORLÁTOZÁSA -->
-          <h2 id="felelosseg" class="pt-8 text-2xl font-bold text-white">11. A felelősség korlátozása</h2>
+          <!-- 9. FELELŐSSÉG KORLÁTOZÁSA -->
+          <h2 id="felelosseg" class="pt-8 text-2xl font-bold text-white">9. A felelősség korlátozása</h2>
           <p>
             A Vállalkozó nem felelős olyan hibákért, amelyek a Megrendelő által a
             Vállalkozónak szállított hibás vagy hiányos információk eredményeként
@@ -319,7 +267,7 @@ const sections = [
             abban, hogy az eljárások megfelelő helyszíne Magyarország bíróságai
             lesznek.
           </p>
-          <p class="pt-2 text-sm">Budapest, [DÁTUM]</p>
+          <p class="pt-2 text-sm">Budapest, 2026.08.01.</p>
         </div>
       </div>
     </div>
