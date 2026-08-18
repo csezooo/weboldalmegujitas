@@ -1,0 +1,191 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const sections = [
+  { id: 'fogalmak', label: '1. Fogalmak' },
+  { id: 'jogalap', label: '2. Adatkezelés jogalapja' },
+  { id: 'kezelt-adatok', label: '3. Kezelt adatok' },
+  { id: 'harmadik-felek', label: '4. Harmadik felek' },
+  { id: 'adattovabbitas', label: '5. Adattovábbítás' },
+  { id: 'erintett-jogai', label: '6. Érintetti jogok' },
+  { id: 'incidensek', label: '7. Adatvédelmi incidensek' },
+  { id: 'linkek', label: '8. Linkek' },
+  { id: 'adatbiztonsag', label: '9. Adatbiztonság' },
+  { id: 'egyeb', label: '10. Egyéb rendelkezések' },
+];
+---
+
+<Layout
+  title="Adatkezelési tájékoztató | Weboldalmegújítás"
+  description="A weboldalmegujitas.hu adatkezelési tájékoztatója."
+>
+  <section class="bg-base py-24">
+    <div class="mx-auto max-w-6xl px-6">
+      <span class="text-xs font-semibold uppercase tracking-wider text-accent">Jogi tájékoztató</span>
+      <h1 class="mt-3 text-4xl font-bold text-white md:text-5xl">Adatkezelési tájékoztató</h1>
+
+      <div class="mt-16 grid gap-12 md:grid-cols-[240px_1fr]">
+        <!-- STICKY MENÜ -->
+        <aside class="md:sticky md:top-24 md:self-start">
+          <nav class="space-y-1 border-l border-line pl-4">
+            {sections.map((item) => (
+              <a
+                href={`#${item.id}`}
+                class="block py-1.5 text-sm text-muted transition-colors duration-300 ease-out hover:text-white"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+        </aside>
+
+        <!-- TARTALOM -->
+        <div class="max-w-2xl space-y-4 text-muted">
+          <p>
+            Tájékoztatjuk, mint <span class="text-white">Csesznok András e.v.</span>
+            <br />Székhely: 1025 Budapest Vöröstorony utca 20.
+            <br />Adószám: 91202857-1-41
+            <br />Nyilvántartási szám: 60662767
+            <br />Email cím: info@weboldalmegujitas.hu
+          </p>
+          <p>
+            a www.weboldalmegujitas.hu néven elérhető weboldal (továbbiakban „Weboldal")
+            üzemeltetője a Weboldal és a Weboldalhoz kapcsolódó szolgáltatások keretében
+            végzett, a Weboldalra látogatók és a Weboldalon elérhető szolgáltatásokat
+            igénybe vevők (a továbbiakban együttesen Érintett) adatainak kezelésre
+            vonatkozó szabályokat, adatvédelmi, adatkezelési elveket, valamint az
+            adatkezelésre vonatkozó tájékoztatást.
+          </p>
+          <p>
+            Az adatok kezelésével összefüggésben Adatkezelő ezúton tájékoztatja az
+            Érintetteket a Weboldalon általa kezelt személyes adatokról, a személyes
+            adatok kezelése körében követett elveiről és gyakorlatáról, valamint az
+            érintettek jogai gyakorlásának módjáról és lehetőségéről.
+          </p>
+          <p>
+            Az Érintett a Weboldal használatával elfogadja az Adatkezelési Tájékoztatóban
+            foglaltakat, és hozzájárul az alábbiakban meghatározott adatkezeléshez.
+          </p>
+
+          <!-- 1. FOGALMAK -->
+          <h2 id="fogalmak" class="pt-8 text-2xl font-bold text-white">1. Fogalmak</h2>
+          <p><span class="text-white">„adatkezelő":</span> az a természetes vagy jogi személy, közhatalmi szerv, ügynökség vagy bármely egyéb szerv, amely a személyes adatok kezelésének céljait és eszközeit önállóan vagy másokkal együtt meghatározza; ha az adatkezelés céljait és eszközeit az uniós vagy a tagállami jog határozza meg, az adatkezelőt vagy az adatkezelő kijelölésére vonatkozó különös szempontokat az uniós vagy a tagállami jog is meghatározhatja.</p>
+          <p><span class="text-white">„személyes adat":</span> azonosított vagy azonosítható természetes személyre vonatkozó bármely információ. Azonosítható az a természetes személy, aki közvetlen vagy közvetett módon, különösen valamely azonosító, például név, szám, helymeghatározó adat, online azonosító vagy a természetes személy testi, fiziológiai, genetikai, szellemi, gazdasági, kulturális vagy szociális azonosságára vonatkozó egy vagy több tényező alapján azonosítható.</p>
+          <p><span class="text-white">„adatkezelés":</span> a személyes adatokon vagy adatállományokon automatizált vagy nem automatizált módon végzett bármely művelet vagy műveletek összessége, így a gyűjtés, rögzítés, rendszerezés, tagolás, tárolás, átalakítás vagy megváltoztatás, lekérdezés, betekintés, felhasználás, közlés, továbbítás, terjesztés vagy egyéb módon történő hozzáférhetővé tétel útján, összehangolás vagy összekapcsolás, korlátozás, törlés, illetve megsemmisítés.</p>
+          <p><span class="text-white">„az adatkezelés korlátozása":</span> a tárolt személyes adatok megjelölése jövőbeli kezelésük korlátozása céljából.</p>
+          <p><span class="text-white">„profilalkotás":</span> személyes adatok automatizált kezelésének bármely olyan formája, amelynek során a személyes adatokat valamely természetes személyhez fűződő bizonyos személyes jellemzők értékelésére, különösen a munkahelyi teljesítményhez, gazdasági helyzethez, egészségi állapothoz, személyes preferenciákhoz, érdeklődéshez, megbízhatósághoz, viselkedéshez, tartózkodási helyhez vagy mozgáshoz kapcsolódó jellemzők elemzésére vagy előrejelzésére használják.</p>
+          <p><span class="text-white">„adatfeldolgozó":</span> az a természetes vagy jogi személy, közhatalmi szerv, ügynökség vagy bármely egyéb szerv, amely az adatkezelő nevében személyes adatokat kezel.</p>
+          <p><span class="text-white">„címzett":</span> az a természetes vagy jogi személy, közhatalmi szerv, ügynökség vagy bármely egyéb szerv, akivel vagy amellyel a személyes adatot közlik, függetlenül attól, hogy harmadik fél-e. Azon közhatalmi szervek, amelyek egy egyedi vizsgálat keretében az uniós vagy a tagállami joggal összhangban férhetnek hozzá személyes adatokhoz, nem minősülnek címzettnek.</p>
+          <p><span class="text-white">„az Érintett hozzájárulása":</span> az Érintett akaratának önkéntes, konkrét és megfelelő tájékoztatáson alapuló és egyértelmű kinyilvánítása, amellyel az Érintett nyilatkozat vagy a megerősítést félreérthetetlenül kifejező cselekedet útján jelzi, hogy beleegyezését adja az őt érintő személyes adatok kezeléséhez.</p>
+          <p><span class="text-white">„adatvédelmi incidens":</span> a biztonság olyan sérülése, amely a továbbított, tárolt vagy más módon kezelt személyes adatok véletlen vagy jogellenes megsemmisítését, elvesztését, megváltoztatását, jogosulatlan közlését vagy az azokhoz való jogosulatlan hozzáférést eredményezi.</p>
+
+          <!-- 2. JOGALAP -->
+          <h2 id="jogalap" class="pt-8 text-2xl font-bold text-white">2. Adatkezelés jogalapja, célja és ideje</h2>
+          <p>Az Érintettek a Weboldalon kétféleképpen adhatnak meg magukról információkat, adatokat: a Weboldal szolgáltatásainak igénybevétele során kifejezetten megadott, illetve rendelkezésre bocsátott személyes adatok, valamint a Weboldal használatával összefüggésben, a Weboldalra látogatással rendelkezésre bocsátott információk.</p>
+          <p>Az adatkezelés jogalapja minden esetben a természetes személyeknek a személyes adatok kezelése tekintetében történő védelméről és az ilyen adatok szabad áramlásáról szóló EURÓPAI PARLAMENT ÉS A TANÁCS (EU) 2016/679 Rendelet („Rendelet") 6. cikk (1) bekezdésének a) pontja alapján az Érintett önkéntes hozzájárulása alapján kerül sor.</p>
+          <p>Az Érintett jogosult az Adatkezelőhöz intézett írásos bejelentés útján az adatkezeléshez adott hozzájárulását részlegesen vagy teljesen visszavonni, illetve az adatai törlését kérni.</p>
+
+          <!-- 3. KEZELT ADATOK -->
+          <h2 id="kezelt-adatok" class="pt-8 text-2xl font-bold text-white">3. Kezelt személyes adatok</h2>
+          <p>Adatkezelő a megadott személyes adatokat a fent meghatározott céloktól eltérő célokra nem használja, illetve használhatja fel. Személyes adatok harmadik személynek vagy hatóságok számára történő kiadása – hacsak törvény ettől eltérően nem rendelkezik kötelező erővel – az Érintett előzetes, kifejezett hozzájárulása esetén lehetséges.</p>
+          <p>Adatkezelő a személyes adatokat az adatkezelés céljának fennállása alatt kezeli, illetve amíg az Érintett nem kéri az adatai törlését, illetve nem vonja vissza hozzájárulását.</p>
+
+          <h3 class="pt-4 text-lg font-semibold text-white">3.1. Cookie-k kezelése</h3>
+          <p>A Szolgáltató a testre szabott kiszolgálás érdekében az Érintett számítógépén kis adatcsomagot, ún. sütit (cookie) helyez el és a későbbi látogatás során olvas vissza.</p>
+          <p><span class="text-white">Átmeneti (session) cookie:</span> a session cookie-k az Érintett látogatása után automatikusan törlődnek. Ezek elengedhetetlenek ahhoz, hogy a Weboldal egyes funkciói megfelelően tudjanak működni.</p>
+          <p><span class="text-white">Állandó (persistent) cookie:</span> hosszabb ideig kerülnek tárolásra a böngésző cookie file-jában, a jobb felhasználói élmény érdekében.</p>
+          <p>Kezelt adatok köre: IP cím, látogatás dátum, időpont. Az érintettek köre: a weboldalt látogató valamennyi Érintett. Az adatkezelés célja: az Érintettek egymástól való megkülönböztetése, a munkamenet azonosítása, az adatvesztés megakadályozása. Az adatkezelés időtartama: session cookie-k esetében a látogatás befejezéséig, más esetben maximum 30 napig tart.</p>
+
+          <h3 class="pt-4 text-lg font-semibold text-white">3.2. Sütik törlése / módosítása</h3>
+          <p>Az Érintettnek joga van törölni a sütit saját számítógépéről, illetve letilthatja böngészőjében a sütik alkalmazását, a böngésző Eszközök/Beállítások menüjében.</p>
+          <p>A Weboldal külső szerverre mutató hivatkozásokat is tartalmazhat, ezen linkeken elérhető oldalak saját cookie-kat helyezhetnek el, adatokat gyűjthetnek. Ezekért az Adatkezelő minden felelősségét kizárja.</p>
+          <p>A weboldal hirdetéseit külső szolgáltatók (Meta) internetes webhelyeken jeleníthetik meg, cookie-k segítségével személyre szabottan (remarketing).</p>
+
+          <h3 class="pt-4 text-lg font-semibold text-white">3.3. Facebook által elhelyezett cookie-k</h3>
+          <p>A Facebook által elhelyezett cookie-król bővebben a <a href="https://hu-hu.facebook.com/policies/cookies/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">hu-hu.facebook.com/policies/cookies</a> címen tájékozódhat.</p>
+
+          <h3 class="pt-4 text-lg font-semibold text-white">3.4. Facebook (Meta) Pixel</h3>
+          <p>A Weboldal a Meta (Facebook) Pixel követő kódját használja, kizárólag az Érintett előzetes, kifejezett hozzájárulása esetén (lásd a Weboldalon megjelenő cookie-beállítások felületét). A Pixel célja a Weboldal használatának elemzése, valamint releváns hirdetések megjelenítése a Meta hirdetési hálózatán (remarketing).</p>
+          <p>Az Érintett a hozzájárulását bármikor visszavonhatja, illetve módosíthatja a Weboldalon elérhető Sütibeállítások felületen keresztül. Hozzájárulás hiányában a Pixel nem töltődik be, és nem gyűjt adatot.</p>
+          <p>A Meta adatvédelmi nyilatkozata: <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">facebook.com/privacy/policy</a></p>
+
+          <!-- 4. HARMADIK FELEK -->
+          <h2 id="harmadik-felek" class="pt-8 text-2xl font-bold text-white">4. Harmadik felek tevékenysége</h2>
+          <p>
+            <span class="text-white">Rádiocoop Bt.</span>
+            <br />Székhely: 1157 Budapest, Zsókavár u. 33.
+            <br />Cégjegyzékszám: 01 06 72 3251
+            <br />Tevékenység: könyvelés és számlázás
+          </p>
+          <p>
+            <span class="text-white">Vercel Inc.</span>
+            <br />Címe: 340 S Lemon Ave #4133, Walnut, CA 91789, USA
+            <br />Honlap: <a href="https://vercel.com/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">vercel.com</a>
+            <br />Adatkezelési tájékoztató: <a href="https://vercel.com/legal/privacy-notice" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">vercel.com/legal/privacy-notice</a>
+            <br />Adatfeldolgozás célja: webtárhely-szolgáltatás biztosítása
+          </p>
+          <p>
+            <span class="text-white">Corporate HQ (GoHighLevel)</span>
+            <br />Címe: 1801 N. Lamar, Suite 600 Dallas, Texas 75202
+            <br />Honlap: <a href="https://www.gohighlevel.com/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">gohighlevel.com</a>
+            <br />Adatfeldolgozás célja: az űrlapon keresztül beküldött érdeklődések (CRM) kezelése és a kapcsolattartás support-eszközeinek biztosítása
+          </p>
+          <p>A GoHighLevel (HighLevel) tanúsítvánnyal rendelkezik az EU-USA Adatvédelmi Keretrendszer (EU-US Data Privacy Framework, DPF) keretében, amely biztosítja, hogy az európai személyes adatok az USA-ban is megfelelő védelmet élveznek. Adatfeldolgozási megállapodás: <a href="https://www.gohighlevel.com/data-processing-agreement" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">gohighlevel.com/data-processing-agreement</a></p>
+          <p>Adatkezelő fenntartja a jogot, hogy a jövőben további adatfeldolgozókat vonjon be az adatkezelésbe, amelyről a jelen Tájékoztató módosításával tájékoztatja az Érintetteket.</p>
+
+          <!-- 5. ADATTOVÁBBÍTÁS -->
+          <h2 id="adattovabbitas" class="pt-8 text-2xl font-bold text-white">5. Adattovábbítás</h2>
+          <p>Adatkezelő kifejezett jogszabályi rendelkezés hiányában csak az adott Érintett kifejezett hozzájárulásával adja át harmadik személyeknek az Érintett azonosítására alkalmas adatokat.</p>
+
+          <!-- 6. ÉRINTETT JOGAI -->
+          <h2 id="erintett-jogai" class="pt-8 text-2xl font-bold text-white">6. Az Érintettet megillető jogok</h2>
+
+          <h3 class="pt-4 text-lg font-semibold text-white">6.1. Tájékoztatás és hozzáférés</h3>
+          <p>Az Érintettnek joga van arra, hogy az Adatkezelő által tárolt személyes adatait és a kezelésükkel kapcsolatos információkat megismerhesse, bármikor kikérje. A kérelmet írásban kell eljuttatni, az igényelt adatokat írásban kapja meg az Érintett. Adatkezelő szóbeli tájékoztatást ezzel összefüggésben nem ad.</p>
+          <p>A tájékoztatás kiterjed: a kezelt adatok körére (név, számlázási adatok, email, telefonszám), az adatkezelés céljára, idejére, jogalapjára, az adattovábbításra és az adatforrásra. Az első másolat ingyenes, további másolatokért ésszerű díj számítható fel.</p>
+
+          <h3 class="pt-4 text-lg font-semibold text-white">6.2. Helyesbítéshez, kiegészítéshez való jog</h3>
+          <p>Az Érintett kérelmére Adatkezelő indokolatlan késedelem nélkül helyesbíti a pontatlan, illetve kiegészíti a hiányos személyes adatokat.</p>
+
+          <h3 class="pt-4 text-lg font-semibold text-white">6.3. Adatkezelés korlátozásához való jog</h3>
+          <p>Az Érintett kérheti az adatkezelés korlátozását, ha vitatja az adatok pontosságát, ha az adatkezelés jogellenes, ha az Adatkezelőnek már nincs szüksége az adatokra, vagy ha tiltakozik az adatkezelés ellen.</p>
+
+          <h3 class="pt-4 text-lg font-semibold text-white">6.4. Törléshez (elfeledtetéshez) való jog</h3>
+          <p>Az Érintett kérésére az Adatkezelő indokolatlan késedelem nélkül törli a rá vonatkozó személyes adatokat, ha azokra már nincs szükség, ha visszavonja a hozzájárulását, vagy ha az adatkezelés jogellenes. E jog nem érvényesíthető, ha az adatkezelés jogi igény érvényesítéséhez, véleménynyilvánítás szabadságához vagy közérdekű archiváláshoz szükséges.</p>
+
+          <h3 class="pt-4 text-lg font-semibold text-white">6.5. Adathordozhatósághoz való jog</h3>
+          <p>Az Érintett kérheti, hogy a rá vonatkozó, általa megadott adatokat tagolt, géppel olvasható formátumban megkapja, vagy közvetlenül más adatkezelőhöz továbbítsa az Adatkezelő. A kérelmet emailben vagy postai úton kell benyújtani, a beazonosításhoz szükséges adatok megadásával.</p>
+
+          <h3 class="pt-4 text-lg font-semibold text-white">6.6. Tiltakozás személyes adatok kezelése ellen</h3>
+          <p>Az Érintett saját helyzetével kapcsolatos okokból bármikor tiltakozhat személyes adatainak kezelése ellen, illetve a közvetlen üzletszerzés céljából történő adatkezelés ellen — írásban (email, posta), vagy hírlevél esetén a leiratkozás linkre kattintva.</p>
+
+          <h3 class="pt-4 text-lg font-semibold text-white">6.7. Kérelem teljesítésének határideje</h3>
+          <p>Adatkezelő indokolatlan késedelem nélkül, de legfeljebb egy hónapon belül tájékoztatja az Érintettet a hozott intézkedésekről. Ez a határidő indokolt esetben további két hónappal meghosszabbítható.</p>
+
+          <h3 class="pt-4 text-lg font-semibold text-white">6.8. Jogérvényesítési lehetőségek</h3>
+          <p>Az Érintett jogait emailben vagy postai úton küldött kérelemben gyakorolhatja. Telefonon keresztül jogérvényesítésre nincs lehetőség.</p>
+          <p>Ha az Érintett nem ért egyet az Adatkezelő döntésével, a Nemzeti Adatvédelmi és Információszabadság Hatósághoz (1125 Budapest, Szilágyi Erzsébet fasor 22/c.; <a href="https://www.naih.hu" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">naih.hu</a>) fordulhat, vagy bíróság előtt érvényesítheti jogait.</p>
+
+          <!-- 7. INCIDENSEK -->
+          <h2 id="incidensek" class="pt-8 text-2xl font-bold text-white">7. Adatvédelmi incidensek kezelése</h2>
+          <p>Az adatvédelmi incidens a biztonság olyan sérülése, amely a kezelt személyes adatok véletlen vagy jogellenes megsemmisítését, elvesztését, megváltoztatását, jogosulatlan közlését vagy az azokhoz való jogosulatlan hozzáférést eredményezi. Adatkezelő nyilvántartást vezet az incidensekről, és ha egy incidens magas kockázattal jár, legfeljebb 72 órán belül tájékoztatja az Érintettet és a felügyeleti hatóságot.</p>
+
+          <!-- 8. LINKEK -->
+          <h2 id="linkek" class="pt-8 text-2xl font-bold text-white">8. Linkek</h2>
+          <p>A Vállalkozó a Weboldalról ugrópontként elérhető külső honlapok tartalmáért, adat- és információvédelmi gyakorlatáért nem vállal felelősséget. Amennyiben tudomására jut, hogy egy linkelt oldal harmadik személyek jogait vagy a hatályos jogszabályokat sérti, a linket haladéktalanul eltávolítja.</p>
+
+          <!-- 9. ADATBIZTONSÁG -->
+          <h2 id="adatbiztonsag" class="pt-8 text-2xl font-bold text-white">9. Adatbiztonság</h2>
+          <p>Az Adatkezelő gondoskodik az adatok biztonságáról, és olyan technikai és szervezési intézkedéseket tesz, amelyek biztosítják, hogy a kezelt adatok védettek legyenek, és megakadályozza azok megsemmisülését, jogosulatlan felhasználását vagy megváltoztatását. A kezelt adatokat kizárólag az Adatkezelő és az általa igénybe vett adatfeldolgozók ismerhetik meg.</p>
+          <p>Az Érintett elismeri, hogy az adatok védelme teljes mértékben az interneten nem garantálható, és az Adatkezelő nem felelős a minden erőfeszítés ellenére bekövetkező jogosulatlan hozzáférésért.</p>
+          <p>Adatkezelő semmilyen körülmények között nem gyűjt különleges adatokat (faji eredet, politikai vélemény, vallási meggyőződés, egészségi állapot, szexuális élet, büntetett előélet stb.).</p>
+
+          <!-- 10. EGYÉB -->
+          <h2 id="egyeb" class="pt-8 text-2xl font-bold text-white">10. Egyéb rendelkezések</h2>
+          <p>Adatkezelő fenntartja a jogot, hogy jelen Adatkezelési Tájékoztatót egyoldalúan módosítsa. A módosítás hatályba lépését követően az Érintett – tiltakozás esetét kivéve – a Weboldal további használatával elfogadja a módosított Adatkezelési Tájékoztatóban foglaltakat, mely dokumentum az ÁSZF elválaszthatatlan részét képezi.</p>
+          <p class="pt-2 text-sm">Jelen Adatkezelési Tájékoztató 2026. augusztus 1. napjától érvényes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

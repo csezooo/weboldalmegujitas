@@ -1,0 +1,160 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const sections = [
+  { id: 'cookiek', label: 'Cookie-k és adatgyűjtés' },
+  { id: 'szerzoi-jogok', label: 'Szerzői jogok' },
+  { id: 'informaciok', label: 'Információk' },
+  { id: 'internet-biztonsaga', label: 'Az internet biztonsága' },
+  { id: 'szemelyes-adatok', label: 'Személyes adatok kezelése' },
+  { id: 'hirlevel', label: 'Feliratkozás a hírlevélre' },
+];
+---
+
+<Layout
+  title="Jogi nyilatkozat | Weboldalmegújítás"
+  description="A weboldalmegujitas.hu jogi nyilatkozata."
+>
+  <section class="bg-base py-24">
+    <div class="mx-auto max-w-6xl px-6">
+      <span class="text-xs font-semibold uppercase tracking-wider text-accent">Jogi tájékoztató</span>
+      <h1 class="mt-3 text-4xl font-bold text-white md:text-5xl">Jogi nyilatkozat</h1>
+
+      <div class="mt-16 grid gap-12 md:grid-cols-[240px_1fr]">
+        <!-- STICKY MENÜ -->
+        <aside class="md:sticky md:top-24 md:self-start">
+          <nav class="space-y-1 border-l border-line pl-4">
+            {sections.map((item) => (
+              <a
+                href={`#${item.id}`}
+                class="block py-1.5 text-sm text-muted transition-colors duration-300 ease-out hover:text-white"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+        </aside>
+
+        <!-- TARTALOM -->
+        <div class="max-w-2xl space-y-4 text-muted">
+          <p>
+            Tájékoztatjuk, mint <span class="text-white">Csesznok András e.v.</span>
+            <br />Székhely: 1025 Budapest, Vöröstorony utca 20.
+            <br />Adószám: 91202857-1-41
+            <br />Nyilvántartási szám: 60662767
+            <br />Email cím: info@weboldalmegujitas.hu
+          </p>
+
+          <!-- COOKIE-K -->
+          <h2 id="cookiek" class="pt-8 text-2xl font-bold text-white">Cookie-k és adatgyűjtés</h2>
+          <p>
+            A weboldalmegujitas.hu weboldalunk (továbbiakban: „Weboldal") böngészése
+            közbeni felhasználói szokások elemzése céljából cookie-kat (mérőkódokat)
+            használunk, melyek az Ön számítógépéről bizonyos adatok gyűjtését (pl. IP
+            cím) teszik lehetővé. Számítógépének IP címét látogatottsági statisztikák
+            készítése és az esetleges rosszindulatú informatikai műveletek
+            beazonosítása céljából rendszerünk 5 évig tárolja.
+          </p>
+          <p>
+            A cookie-k adatot szolgáltatnak például arról, hogy Ön járt-e már valaha az
+            oldalunkon. A cookie-k nem tudják Önt személy szerint beazonosítani,
+            azonban lehetővé teszik, hogy külső szolgáltatók — köztük a Meta — a
+            weboldalunkon korábban tett látogatása alapján célzott hirdetéseket
+            jelenítsenek meg Önnek más webhelyeken. A böngésző cookie-kat a böngésző
+            beállításain keresztül tudja letiltani.
+          </p>
+          <p>
+            Kérjük, hogy a Weboldal megtekintését megelőzően olvassa végig az alábbi
+            nyilatkozatot. A weboldalaink megnyitása az Ön részéről az alábbi
+            nyilatkozatban foglaltak elfogadásának minősül.
+          </p>
+
+          <!-- SZERZŐI JOGOK -->
+          <h2 id="szerzoi-jogok" class="pt-8 text-2xl font-bold text-white">Szerzői jogok</h2>
+          <p>
+            A Weboldalon szereplő nevek, logók, grafikák, tájékoztatók és egyéb
+            információs anyagok, illetve letölthető dokumentumok szerzői jogi védelem
+            alatt állnak. A Weboldal tartalmának akár részben, akár egészben történő, a
+            saját személyes használatot meghaladó vagy attól eltérő célú bármilyen
+            használata — így különösen annak tárolása, kinyomtatása, terjesztése,
+            átruházása — kizárólag a Vállalkozó előzetes írásbeli hozzájárulásával
+            történhet.
+          </p>
+
+          <!-- INFORMÁCIÓK -->
+          <h2 id="informaciok" class="pt-8 text-2xl font-bold text-white">Információk</h2>
+          <p>
+            A Weboldalon közzétett információk és adatok tájékoztató jellegűek, a
+            Vállalkozó nem vállal felelősséget azok pontosságáért és
+            teljeskörűségéért. Az adatok és információk felhasználása a felhasználó
+            felelősségére történik.
+          </p>
+
+          <!-- INTERNET BIZTONSÁGA -->
+          <h2 id="internet-biztonsaga" class="pt-8 text-2xl font-bold text-white">Az internet biztonsága</h2>
+          <p>
+            Az interneten továbbított elektronikus üzenet tartalmához illetéktelen
+            személyek potenciálisan hozzáférhetnek, annak tartalma módosulhat, illetve
+            az üzenet elveszhet.
+          </p>
+
+          <!-- SZEMÉLYES ADATOK -->
+          <h2 id="szemelyes-adatok" class="pt-8 text-2xl font-bold text-white">Személyes (megadott) adatok kezelése</h2>
+          <p>
+            Ön a hatályos jogszabályoknak megfelelően interneten keresztül megadhatja
+            e-mail címét, lakcímét, nevét és telefonszámát, amennyiben igényli, hogy a
+            Vállalkozó termékeivel kapcsolatos tájékoztató anyagokat küldjön az Ön
+            részére elektronikus úton, illetőleg kapcsolatba lépjen Önnel az
+            adatvédelmi nyilatkozatban rögzítettek szerint.
+          </p>
+          <p>
+            Ön adatai megadásával hozzájárul ahhoz, hogy a megadott telefonszámon vagy
+            e-mail címen a kért tájékoztatással, ajánlattal kapcsolatban megkeressük,
+            valamint a megadott telefonszámot és e-mail címet marketing célokból
+            kezeljük.
+          </p>
+          <p>
+            Hozzájárulását mindegyik esetben bármikor, korlátozás és indoklás nélkül,
+            ingyenesen visszavonhatja.
+          </p>
+          <p>
+            Személyes adatai kezeléséről bármikor jogosult tájékoztatást kérni a fenti
+            elérhetőségeken, továbbá kérheti személyes adatai helyesbítését, illetve
+            törlését vagy zárolását, valamint megilleti a személyes adatai kezelése
+            elleni tiltakozási jog. Jogai megsértése esetén bírósághoz fordulhat.
+          </p>
+          <p>
+            Nem kezdeményezheti azon adatai törlését, amelyek kezelésének célja kötött
+            bármely szerződés teljesítése.
+          </p>
+          <p>
+            A megadott adatokat az 1996. évi CXII. törvény, valamint az Információs
+            önrendelkezési jogról és az információszabadságról szóló 2011. évi CXII.
+            törvény rendelkezéseinek megfelelően, azokat maradéktalanul betartva
+            kezeli.
+          </p>
+          <p>A hozzájárulás megadása a fenti tájékoztatás figyelembevételével önkéntes.</p>
+
+          <!-- HÍRLEVÉL -->
+          <h2 id="hirlevel" class="pt-8 text-2xl font-bold text-white">Feliratkozás a Vállalkozó elektronikus hírleveleire</h2>
+          <p>
+            Az elektronikus (e-mailben küldött) hírlevelekre történő feliratkozással
+            Ön hozzájárul ahhoz, hogy a Vállalkozó hírlevelet küldjön Önnek, és az Ön
+            által ehhez megadott e-mail címét és nevét nyilvántartsa, kezelje, illetve
+            3. személynek mint technikai közreműködőnek az adatfeldolgozás során — a
+            jogszabályi előírások betartása mellett — átadja. A hírlevélben — annak
+            típusától függően — heti vagy havi rendszerességgel kap tájékoztatást az
+            új szolgáltatásainkról, termékeinkről és akcióinkról és hasznos
+            információkról. A hírlevelek reklámüzeneteket tartalmazhatnak. A
+            hírlevélről Ön bármikor leiratkozhat a hírlevélben található linken.
+          </p>
+          <p>
+            Vállalkozó kijelenti, hogy ezen jogi nyilatkozat a mai nappal lép életbe, a
+            korábban kiadott nyilatkozat érvényét veszti.
+          </p>
+          <p class="pt-2 text-sm">Jelen nyilatkozat 2026. augusztus 1. napjától érvényes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

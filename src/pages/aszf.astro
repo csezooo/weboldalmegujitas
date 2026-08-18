@@ -1,0 +1,327 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const sections = [
+  { id: 'altalanos', label: 'Általános szabályok' },
+  { id: 'hatalya', label: '1. Az ÁSZF hatálya' },
+  { id: 'fogalmak', label: '2. Fogalom-meghatározások' },
+  { id: 'alapveto', label: '3. Alapvető rendelkezések' },
+  { id: 'folyamat', label: '4. A szolgáltatás menete' },
+  { id: 'egyuttmukodes', label: '5. Együttműködés' },
+  { id: 'dijelszamolas', label: '6. A vállalkozói díj elszámolása' },
+  { id: 'elallas', label: '7. Elállási jog' },
+  { id: 'tartalmak', label: '8. Tartalmak tulajdonjoga' },
+  { id: 'szoftver', label: '9. Szoftver korlátozása' },
+  { id: 'tulajdonosi-info', label: '10. Tulajdonosi információ' },
+  { id: 'felelosseg', label: '11. Felelősség korlátozása' },
+];
+---
+
+<Layout
+  title="ÁSZF | Weboldalmegújítás"
+  description="A weboldalmegujitas.hu általános szerződési feltételei."
+>
+  <section class="bg-base py-24">
+    <div class="mx-auto max-w-6xl px-6">
+      <span class="text-xs font-semibold uppercase tracking-wider text-accent">Jogi tájékoztató</span>
+      <h1 class="mt-3 text-4xl font-bold text-white md:text-5xl">Általános szerződési feltételek</h1>
+
+      <div class="mt-16 grid gap-12 md:grid-cols-[240px_1fr]">
+        <!-- STICKY MENÜ -->
+        <aside class="md:sticky md:top-24 md:self-start">
+          <nav class="space-y-1 border-l border-line pl-4">
+            {sections.map((item) => (
+              <a
+                href={`#${item.id}`}
+                class="block py-1.5 text-sm text-muted transition-colors duration-300 ease-out hover:text-white"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+        </aside>
+
+        <!-- TARTALOM -->
+        <div class="max-w-2xl space-y-4 text-muted">
+          <p>
+            Tájékoztatjuk, mint <span class="text-white">Csesznok András e.v.</span>
+            <br />Székhely: 1025 Budapest, Vöröstorony utca 20.
+            <br />Adószám: 91202857-1-41
+            <br />Nyilvántartási szám: 60662767
+            <br />Email cím: info@weboldalmegujitas.hu
+          </p>
+          <p>
+            a weboldalmegujitas.hu néven elérhető weboldal (továbbiakban „Weboldal")
+            általános szerződési feltételeiről.
+          </p>
+
+          <!-- ÁLTALÁNOS SZABÁLYOK -->
+          <h2 id="altalanos" class="pt-8 text-2xl font-bold text-white">Általános szabályok</h2>
+          <p>
+            Jelen Általános Szerződési Feltételek (továbbiakban „ÁSZF") tartalmazzák a
+            Vállalkozó, mint jogtulajdonos által üzemeltetett Weboldal használatára
+            vonatkozó szolgáltatási és szerződési feltételeket. Eltérő írásos
+            megállapodás hiányában a jelen ÁSZF vonatkozik a Weboldalon a Vállalkozó
+            által tett ajánlatokra, az általa teljesített szolgáltatásokra.
+          </p>
+          <p>
+            A szerződés a felek között akkor jön létre, amikor egy Látogató a
+            Vállalkozó bármely szolgáltatására feliratkozik, jelentkezik, vagy
+            megrendeli azt. Ezen szerződés attól a pillanattól kezdve érvényes a
+            felekre, hogy a Látogató a Weboldalon adatait kitölti és elküldi
+            jelentkezését — ezzel a látogató Megrendelővé válik (továbbiakban
+            „Jelentkező", „Megrendelő" vagy „Ügyfél") —, amelyre a távollévők között
+            megkötött szerződés (17/1999. (II. 5.) Korm. rendelet) szabályai
+            vonatkoznak. A Megrendelő a jelentkezés elküldésével tudomásul veszi és
+            elfogadja az itt leírt Általános Szerződési Feltételeket.
+          </p>
+          <p>
+            Alaposan olvassa el a feltételeket! Kérjük, hogy csak akkor vegye igénybe
+            szolgáltatásainkat, amennyiben ezen ÁSZF minden pontjával egyetért, és
+            kötelező érvényűnek tekinti magára nézve. A szerződéskötés nyelve magyar, a
+            megkötött szerződés nem minősül írásba foglalt szerződésnek. Jelen
+            dokumentum nem kerül iktatásra, kizárólag elektronikus formában kerül
+            megkötésre.
+          </p>
+
+          <!-- 1. HATÁLYA -->
+          <h2 id="hatalya" class="pt-8 text-2xl font-bold text-white">1. Az ÁSZF hatálya</h2>
+          <p>
+            Az ÁSZF hatálya kiterjed minden olyan, a Vállalkozó által kötött
+            szerződésre, árajánlatra, megállapodásra, megbízásra, megrendelésre vagy
+            meghatalmazásra, mely alapján a Vállalkozó ellenszolgáltatás fejében
+            vállalkozói tevékenységet végez, vagy bármilyen más egyéb szolgáltatást
+            nyújt a Megrendelő vagy harmadik fél részére.
+          </p>
+
+          <!-- 2. FOGALMAK -->
+          <h2 id="fogalmak" class="pt-8 text-2xl font-bold text-white">2. Fogalom-meghatározások</h2>
+          <p>
+            A Felek egyedi szerződéseibe foglalt ellenkező tartalmú megállapodás
+            hiányában a Felek jogviszonyában az alábbi fogalmak a következő
+            jelentésekkel bírnak:
+          </p>
+          <p>
+            <span class="text-white">Szerződés:</span> A Megrendelő és a Vállalkozó
+            közötti jogviszonyt létrehozó okirat. Szerződésnek minősül a Felek által
+            aláírt vállalkozási szerződés, az elfogadott árajánlat, írásbeli vagy
+            szóbeli megrendelés, valamint a munkalap is.
+          </p>
+          <p>
+            <span class="text-white">Megrendelő:</span> Az ÁSZF hatálya alá tartozó
+            szerződő partner vagy ügyfél, akinek a részére, vagy megbízásából a
+            Vállalkozó, vagy alvállalkozója munkát végez, értékesít, vagy szolgáltatást
+            nyújt.
+          </p>
+          <p><span class="text-white">Vállalkozó:</span> Csesznok András e.v.</p>
+          <p><span class="text-white">Felek:</span> A Megrendelő és a Vállalkozó együttes említésük esetén.</p>
+          <p>
+            <span class="text-white">Szoftver:</span> A HighLevel Inc. által
+            létrehozott, GoHighLevel néven ismert, számítógépen futó, utasításokból
+            álló programok és adatok összessége, amelyet a Vállalkozó egyes
+            szolgáltatásai (pl. kapcsolatfelvételi űrlap, időpontfoglalás) nyújtásához
+            használ.
+          </p>
+
+          <!-- 3. ALAPVETŐ RENDELKEZÉSEK -->
+          <h2 id="alapveto" class="pt-8 text-2xl font-bold text-white">3. Alapvető rendelkezések</h2>
+          <p>
+            A jelen ÁSZF-ben nem szabályozott kérdésekre, valamint jelen Szabályzat
+            értelmezésére a magyar jog az irányadó, különös tekintettel a Polgári
+            Törvénykönyvről szóló 2013. évi V. törvény („Ptk.") és az elektronikus
+            kereskedelmi szolgáltatások, valamint az információs társadalommal
+            összefüggő szolgáltatások egyes kérdéseiről szóló 2001. évi CVIII. törvény
+            ide vonatkozó rendelkezései. A vonatkozó jogszabályok kötelező
+            rendelkezései a felekre külön kikötés nélkül is irányadók.
+          </p>
+          <p>Ezen Általános Szerződési Feltételek hatálya visszavonásig, vagy újabb módosításig érvényes.</p>
+          <p>
+            A Weboldal tartalmát és az azon keresztül megvásárolható szolgáltatásokat,
+            termékeket és a szolgáltatás során megvásárolható, vagy írásos és szóban
+            elhangzó információkat és anyagokat szerzői jogok védik. Kijelentjük, hogy
+            a Vállalkozó birtokolja a fent említett információkat és anyagokat. A
+            Weboldal oldalainak tartalmát és a kialakítását nemzetközi és magyar
+            törvények védik. Tilos a Vállalkozótól származó információk, cikkek,
+            megjelenések, bármely anyagok árusítása, bármilyen formában történő
+            megváltoztatása és ismételt megjelentetése.
+          </p>
+          <p>
+            Amennyiben weblapunk tartalmát harmadik személy honlapján bizonyíthatóan
+            azonos vagy hasonló formában észleljük, másolt oldalanként 200 000 Ft/hónap
+            összegű kötbért számlázunk a jogtalan felhasználónak. Másolt oldalnak
+            minősül az is, ha az átvétel a teljes oldaltartalom 20%-ánál nagyobb
+            mértékben tartalmazza a nem engedélyezetten átvett tartalmakat.
+          </p>
+          <p>Az adatvédelmi tájékoztatónk elérhető és letölthető a Weboldalon.</p>
+
+          <!-- 4. A SZOLGÁLTATÁS MENETE (ÚJ, saját javaslat) -->
+          <h2 id="folyamat" class="pt-8 text-2xl font-bold text-white">4. A szolgáltatás menete</h2>
+          <p>
+            A Vállalkozó weboldal-megújítási szolgáltatása alapesetben az alábbi
+            lépésekből áll: (1) a Megrendelő árajánlatot kér a Weboldalon található
+            űrlapon keresztül; (2) a Vállalkozó felméri a Megrendelő jelenlegi
+            weboldalát, és árajánlatot küld; (3) az árajánlat elfogadását követően a
+            Felek egyeztetik a pontos igényeket és a design-koncepciót; (4) a
+            Vállalkozó elkészíti és átadja a megújított weboldalt; (5) igény esetén a
+            Felek külön megállapodás alapján folyamatos karbantartási szolgáltatásban
+            állapodhatnak meg.
+          </p>
+          <p class="text-sm italic">
+            [Ezt a szakaszt érdemes a saját, tényleges munkafolyamatodhoz igazítanod —
+            ez egy általános váz, amit finomíthatsz.]
+          </p>
+
+          <!-- 5. EGYÜTTMŰKÖDÉS -->
+          <h2 id="egyuttmukodes" class="pt-8 text-2xl font-bold text-white">5. Együttműködés</h2>
+          <p>
+            A szerződő Felek a szerződés teljesítése érdekében szoros és közvetlen
+            kapcsolat formájában működnek együtt. Ennek érdekében kölcsönösen és
+            haladék nélkül hozzák egymás tudomására mindazon tényeket, körülményeket
+            és értesüléseket, melyek a szerződésszerű teljesítést lassítják,
+            akadályozzák, vagy veszélyeztetik, és azok elhárítására az adott
+            helyzetben tőlük elvárható intézkedéseket megteszik.
+          </p>
+          <p>
+            A Vállalkozó a Megrendelővel együttműködve, a Megrendelőt folyamatosan
+            tájékoztatva hozza létre és végzi a megrendelt szolgáltatásokat. A
+            Vállalkozó köteles minden szolgáltatást érintő, a Megrendelő online
+            megjelenését befolyásoló módosításról tájékoztatni a Megrendelőt a
+            szerződés időtartama alatt.
+          </p>
+          <p>
+            A szerződő Felek esetleges vitáikat elsősorban tárgyalásos úton kísérlik
+            meg rendezni. Jogvita esetére a Felperes által választott bíróság
+            kizárólagos illetékességét kötik ki.
+          </p>
+
+          <!-- 6. DÍJ ELSZÁMOLÁS -->
+          <h2 id="dijelszamolas" class="pt-8 text-2xl font-bold text-white">6. A vállalkozói díj elszámolása</h2>
+          <p>A vállalkozói díj kifizetése történhet készpénzben vagy banki átutalással, alapesetben 8 munkanapos fizetési határidővel.</p>
+          <p>
+            A Vállalkozó köteles a számlát vagy díjbekérőt a fizetési esedékesség
+            előtt legalább 7 nappal megküldeni a Megrendelő részére. A Megrendelő
+            köteles a számla vagy díjbekérő összegét legkésőbb a fizetési határidő
+            napjáig kiegyenlíteni.
+          </p>
+          <p>
+            <span class="text-white">Fizetési késedelem:</span> amennyiben a Megrendelő
+            a fizetési határidőt elmulasztja, a Vállalkozó jogosult a szolgáltatás
+            nyújtását a fizetési határidő lejártát követő 14. naptól kezdődően részben
+            vagy egészben szüneteltetni.
+          </p>
+          <p>
+            <span class="text-white">Tartós nemfizetés:</span> amennyiben a Megrendelő
+            a fizetési kötelezettségének a szüneteltetés megkezdésétől számított 2
+            hónapon belül sem tesz eleget, a Vállalkozó jogosult a szolgáltatást
+            véglegesen megszüntetni, valamint a Megrendelőhöz kapcsolódó weboldalt,
+            adatokat és tartalmakat véglegesen törölni.
+          </p>
+          <p>
+            <span class="text-white">Fizetési haladék:</span> a Megrendelő jogosult
+            legfeljebb 7 nap fizetési haladékot kérelmezni, kizárólag a Vállalkozó
+            előzetes írásbeli jóváhagyásával, e-mailben benyújtott kérelem alapján.
+          </p>
+
+          <!-- 7. ELÁLLÁSI JOG (ÚJ, saját javaslat) -->
+          <h2 id="elallas" class="pt-8 text-2xl font-bold text-white">7. Elállási jog</h2>
+          <p>
+            Amennyiben a Megrendelő a fogyasztóvédelmi jogszabályok szerinti
+            fogyasztónak minősül, a 45/2014. (II. 26.) Korm. rendelet alapján a
+            szerződéskötéstől számított 14 napon belül indoklás nélkül elállhat a
+            szerződéstől. Amennyiben a Vállalkozó a szolgáltatás nyújtását a
+            Megrendelő kifejezett kérésére és beleegyezésével az elállási határidő
+            lejárta előtt megkezdi, a Megrendelő tudomásul veszi, hogy elállási jogát
+            elveszti, amint a szolgáltatás teljesítése megtörtént.
+          </p>
+
+          <!-- 8. TARTALMAK TULAJDONJOGA -->
+          <h2 id="tartalmak" class="pt-8 text-2xl font-bold text-white">8. Tartalmak tulajdonjoga</h2>
+          <p>
+            A Megrendelő elfogadja, hogy a Vállalkozó módosíthatja a meglévő
+            tartalmakat a Megrendelő javára. A Megrendelő által biztosított tartalmak a
+            Megrendelő tulajdonát képezik. A Vállalkozó jogosult azok technikai,
+            szerkezeti vagy formai módosítására a weboldal működése és megjelenése
+            érdekében. A Vállalkozó által létrehozott, módosított tartalmak a
+            Megrendelő tulajdonát képezik.
+          </p>
+
+          <!-- 9. SZOFTVER KORLÁTOZÁSA -->
+          <h2 id="szoftver" class="pt-8 text-2xl font-bold text-white">9. Szoftver korlátozása a Megrendelő részére</h2>
+          <p>
+            A Megrendelő tudomásul veszi, hogy a jelen szerződés keretében biztosított
+            szoftverekhez, rendszerekhez és digitális eszközökhöz kizárólag használati
+            jogosultságot szerez a szerződés időtartamára, azok tulajdonjoga, licence
+            vagy előfizetési joga nem száll át a Megrendelőre.
+          </p>
+          <p>
+            A Megrendelő nem jogosult a Vállalkozó által biztosított rendszerekhez
+            kapcsolódó licencek, előfizetések vagy technikai hozzáférések harmadik fél
+            részére történő átadására, továbbértékesítésére vagy jogosulatlan
+            használatára.
+          </p>
+
+          <!-- 10. TULAJDONOSI INFORMÁCIÓ -->
+          <h2 id="tulajdonosi-info" class="pt-8 text-2xl font-bold text-white">10. Tulajdonosi információ és anyagok használata</h2>
+          <p>
+            Mindkét fél által a másik félnek közölt információt bizalmas és
+            tulajdonosi jogként kell kezelni. A Felek egyetértenek abban, hogy minden
+            Tulajdonosi Információt szigorúan bizalomban kell tartaniuk.
+          </p>
+          <p>
+            <span class="text-white">Licenc:</span> a Felek vállalják, hogy nem hoznak
+            nyilvánosságra semmilyen Tulajdonosi Információt a másik Fél kifejezett
+            engedélye nélkül.
+          </p>
+          <p>
+            <span class="text-white">Portfólió közzététele:</span> a Megrendelő
+            elfogadja, hogy a Vállalkozónak joga van a jelen Szerződés alapján
+            létrehozott anyagokat felhasználni a saját portfóliójához. Mielőtt a
+            Vállalkozó portfóliójában megjelenítené a Megrendelő weboldalán
+            megjelenített anyagokat, írásban kér engedélyt a Megrendelőtől.
+          </p>
+          <p>
+            <span class="text-white">Referencia megjelölés és logó elhelyezése:</span>
+            a Megrendelő tudomásul veszi és hozzájárul ahhoz, hogy a Vállalkozó az
+            általa készített weboldalon, annak láblécében vagy más, nem zavaró módon, a
+            Vállalkozóra utaló megjelölést (különösen logót, márkanevet vagy „készítette"
+            feliratot) elhelyezzen. A megjelölés eltávolítására kizárólag külön
+            írásbeli megállapodás alapján, egyedi díjazás ellenében kerülhet sor.
+          </p>
+          <p>
+            <span class="text-white">Szoftver adatkezelése:</span> a Megrendelő
+            tudomásul veszi, hogy a Szoftver-fiókjában rögzített adatok (pl.
+            ügyféladatok, űrlapkitöltések, üzenetek) a Megrendelő adatkezelése alatt
+            állnak. A Vállalkozó a Szoftverhez való hozzáférés biztosítása során
+            adatfeldolgozóként jár el, és az adatokat kizárólag a szolgáltatás
+            nyújtása érdekében kezeli. A Megrendelő felelős az adatok jogszerű
+            kezeléséért és a szükséges hozzájárulások, adatvédelmi nyilatkozatok
+            biztosításáért.
+          </p>
+
+          <!-- 11. FELELŐSSÉG KORLÁTOZÁSA -->
+          <h2 id="felelosseg" class="pt-8 text-2xl font-bold text-white">11. A felelősség korlátozása</h2>
+          <p>
+            A Vállalkozó nem felelős olyan hibákért, amelyek a Megrendelő által a
+            Vállalkozónak szállított hibás vagy hiányos információk eredményeként
+            merülnek fel. A Vállalkozó nem felel semmilyen mellék-, következményes,
+            közvetett vagy különleges károkért, sem a nyereségvesztésért, sem az
+            üzleti működés megszakadásáért, amelyek a szolgáltatás Megrendelő kérése
+            szerinti teljesítéséből erednek vagy azok eredményeként keletkeztek.
+          </p>
+          <p>
+            A Megrendelő beleegyezik abba, hogy amennyiben veszteség éri a Vállalkozó
+            hibás teljesítése miatt, a Megrendelő egyetlen kártérítési lehetősége a
+            szolgáltatásért fizetett, adott időszakra vonatkozó összeg visszaigénylése.
+          </p>
+          <p>
+            A Felek megértik és egyetértenek azzal, hogy a Szerződés értelmezése és
+            végrehajtása Magyarország törvényei szerint történik. A Felek egyetértenek
+            abban, hogy az eljárások megfelelő helyszíne Magyarország bíróságai
+            lesznek.
+          </p>
+          <p class="pt-2 text-sm">Budapest, [DÁTUM]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
