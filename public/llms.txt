@@ -1,0 +1,14 @@
+# Weboldalmegújítás
+
+> Weboldal-megújítási szolgáltatás magyar vállalkozásoknak. Elavult, régi weboldalak modern, gyors és ügyfeleket hozó weboldallá alakítása.
+
+## Szolgáltatások
+- Weboldal megújítás és újratervezés
+- Weboldal karbantartás
+- Keresőoptimalizálás (SEO) alapok
+
+## Fontos oldalak
+- [Főoldal](https://weboldalmegujitas.hu/): Szolgáltatás bemutatása, folyamat, árajánlatkérés
+- [Munkáink](https://weboldalmegujitas.hu/munkaink): Korábbi weboldal-megújítási projektek referenciái
+- [Rólunk](https://weboldalmegujitas.hu/rolunk): A csapat bemutatása
+- [Kapcsolat](https://weboldalmegujitas.hu/kapcsolat): Elérhetőségek
