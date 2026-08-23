@@ -1,5 +1,6 @@
 ---
 const PIXEL_ID = '29018976357690080';
+const GTM_ID = 'GTM-WZXFPR96';
 ---
 
 <div id="cookie-banner" class="fixed inset-x-0 bottom-0 z-[100] hidden border-t border-line bg-surface/95 backdrop-blur-md">
@@ -43,11 +44,23 @@ const PIXEL_ID = '29018976357690080';
     window.fbq('track', 'PageView');
   }
 
+  function loadGTM(gtmId) {
+  (function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+    var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+    j.async = true;
+    j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', gtmId);
+}
+
   function applyConsent(choice) {
-    if (choice === 'accepted') {
-      loadFacebookPixel(PIXEL_ID);
-    }
+  if (choice === 'accepted') {
+    loadFacebookPixel(PIXEL_ID);
+    loadGTM(GTM_ID);
   }
+}
 
   const stored = localStorage.getItem('cookie-consent');
   const banner = document.getElementById('cookie-banner');
