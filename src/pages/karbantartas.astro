@@ -1,0 +1,373 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import karbantartasKep from '../assets/kepek/karbantartas-hero.png';
+
+const problems = [
+  { icon: 'M13 10V3L4 14h7v7l9-11h-7z', title: 'Elavult rendszer', text: 'A weboldal motorja és bővítményei folyamatosan fejlődnek. A régi verziók idővel kompatibilitási és biztonsági problémákat okozhatnak.' },
+  { icon: 'M9 19v-6a2 2 0 012-2h2a2 2 0 012 2v6m-9 0h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z', title: 'Lassuló weboldal', text: 'A weboldal teljesítménye idővel romolhat, ami a keresőből érkező forgalmat és a konverziókat is befolyásolja.' },
+  { icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', title: 'Biztonsági kockázatok', text: 'Az elavult rendszerek könnyebben támadhatóvá válhatnak. Egy feltört weboldal komoly kellemetlenséget és üzleti kiesést is okozhat.' },
+  { icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z', title: 'Elavult tartalom', text: 'Megváltozott egy telefonszám, új szolgáltatás van? Ha nincs, aki frissítse az oldalt, az információk gyorsan elavulnak.' },
+  { icon: 'M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z', title: 'Váratlan hibák', text: 'Egy frissítés vagy módosítás után előfordulhat, hogy valami nem működik megfelelően — ha nincs, aki ellenőrizze.' },
+  { icon: 'M13 7h8m0 0v8m0-8l-8 8-4-4-6 6', title: 'Elvesztett érdeklődők', text: 'Ha egy űrlap nem működik, egy oldal hibásan töltődik be, vagy a weboldal túl lassú, az érdeklődő egyszerűen továbbáll.' },
+];
+
+const included = [
+  { num: '01', title: 'Technikai frissítések', text: 'Naprakészen tartjuk a weboldal rendszerét, motorját és a bővítményeket, hogy azok kompatibilisen működjenek.' },
+  { num: '02', title: 'Biztonsági mentések', text: 'Rendszeres biztonsági mentésekkel gondoskodunk arról, hogy probléma esetén legyen mihez visszanyúlni.' },
+  { num: '03', title: 'Biztonsági ellenőrzés', text: 'Figyelünk a weboldal biztonságára, és kezeljük a felmerülő technikai problémákat.' },
+  { num: '04', title: 'Hibajavítás', text: 'Ha valami nem úgy működik, ahogy kellene, utánanézünk és megoldjuk a problémát.' },
+  { num: '05', title: 'Tartalmi módosítások', text: 'Új szöveg, kép, szolgáltatás vagy referencia? Küldd el nekünk, és elvégezzük helyetted.' },
+  { num: '06', title: 'Sebesség és teljesítmény', text: 'Figyeljük a weboldal teljesítményét, és szükség esetén optimalizáljuk a betöltési sebességét.' },
+  { num: '07', title: 'Technikai SEO', text: 'Figyelünk az alapvető technikai SEO-beállításokra, hogy a weboldalad keresőbarát maradjon.' },
+  { num: '08', title: 'Folyamatos felügyelet', text: 'Nem csak akkor foglalkozunk az oldaladdal, amikor problémát jelzel — rendszeresen ellenőrizzük.' },
+];
+
+const howSteps = [
+  ['01', 'Átvesszük a weboldalad', 'Megismerjük a weboldal technikai felépítését, rendszerét és beállításait.'],
+  ['02', 'Folyamatosan figyeljük', 'Rendszeresen ellenőrizzük a működését, frissítjük a szükséges elemeket.'],
+  ['03', 'Te jelzed, ha kell valami', 'Ha új tartalomra vagy módosításra van szükséged, egyszerűen elküldöd nekünk.'],
+  ['04', 'Mi elvégezzük', 'Nem kell fejlesztőt keresned vagy technikai problémákat megoldanod.'],
+  ['05', 'Te folytatod a munkád', 'A weboldalad a háttérben fejlődik, miközben a vállalkozásoddal foglalkozol.'],
+];
+
+const benefits = [
+  { title: 'Időt takarítasz meg', text: 'Nem kell technikai problémákkal, frissítésekkel és apró módosításokkal foglalkoznod.' },
+  { title: 'Biztonságot kapsz', text: 'A weboldalad rendszeresen frissítve, ellenőrizve, a fontos adatokról mentés készül.' },
+  { title: 'Nem maradsz egyedül', text: 'Ha problémád van, nem kell külön fejlesztőt keresned — van egy csapat, aki ismeri az oldalad.' },
+  { title: 'Nem hagyjuk elavulni', text: 'A weboldalad nem marad érintetlenül évekre. Folyamatosan figyelünk rá.' },
+];
+
+const checklist = [
+  'Technikai frissítések', 'Rendszeres biztonsági mentések', 'Biztonsági ellenőrzés', 'Hibajavítás',
+  'Tartalmi módosítások', 'Sebességoptimalizálás', 'Technikai SEO-felügyelet', 'Folyamatos weboldal-ellenőrzés', 'Segítség, amikor szükséged van rá',
+];
+
+const responseStats = [
+  ['24 órán belül', 'Reagálunk a hibajelzésedre'],
+  ['Rendszeresen', 'Biztonsági mentéseket készítünk'],
+  ['Folyamatosan', 'Figyeljük és frissítjük a weboldalad'],
+  ['Amikor szükséges', 'Elvégezzük a kért módosításokat'],
+];
+
+const audience = [
+  ['Ha nincs saját fejlesztőd', 'Nem kell külön szakembert keresned minden technikai feladatra.'],
+  ['Ha fontos a biztonság', 'Szeretnéd, hogy valaki rendszeresen figyeljen a weboldal technikai állapotára.'],
+  ['Ha gyakran változik a tartalmad', 'Új szolgáltatások, képek, referenciák kerülnek fel az oldaladra.'],
+  ['Ha egyszerűen nincs rá időd', 'Fontosabb dolgokkal is foglalkoznod kell annál, hogy bővítményeket frissíts.'],
+  ['Ha hosszú távra tervezel', 'Nem szeretnéd, hogy a most elkészült weboldalad pár év múlva újra elavult legyen.'],
+];
+
+const faq = [
+  ['Mit jelent pontosan a weboldal karbantartása?', 'Rendszeresen frissítjük, ellenőrizzük és felügyeljük a weboldal technikai működését. Emellett kisebb tartalmi módosításokat és szükség esetén hibajavításokat is végzünk.'],
+  ['Milyen gyakran frissítitek a weboldalt?', 'A szükséges frissítéseket rendszeresen ellenőrizzük és elvégezzük — nem egy előre meghatározott időpontban végzett egyszeri feladatról van szó, hanem folyamatos karbantartásról.'],
+  ['Kérhetek tartalmi módosításokat is?', 'Igen. Ha szöveget, képet, szolgáltatást vagy egyéb kisebb tartalmat szeretnél módosítani, jelezd nekünk, és elvégezzük.'],
+  ['Mi történik, ha elromlik valami a weboldalon?', 'Jelezd nekünk a problémát, mi pedig megvizsgáljuk az okát és megkezdjük a javítást. A hibajelzésedre 24 órán belül reagálunk.'],
+  ['Készítetek biztonsági mentéseket?', 'Igen, a karbantartás részeként rendszeres biztonsági mentésekkel gondoskodunk arról, hogy probléma esetén legyen mihez visszanyúlni.'],
+  ['Csak általatok készített weboldalakat vállaltok?', 'Más által készített weboldalak karbantartását is vállalhatjuk. Az együttműködés előtt megvizsgáljuk a weboldal technikai állapotát és felépítését.'],
+  ['Mennyi ideig tart egy kért módosítás?', 'A kisebb módosításokat igyekszünk minél gyorsabban elvégezni. A pontos teljesítési idő a kérés összetettségétől függ.'],
+  ['Mi történik, ha nincs szükségem karbantartásra?', 'Természetesen dönthetsz úgy, hogy önállóan kezeled a weboldaladat. Javasoljuk, hogy legalább rendszeres biztonsági mentésről, frissítésekről és ellenőrzésről gondoskodj.'],
+];
+---
+
+<Layout
+  title="Weboldal karbantartás | Weboldalmegújítás"
+  description="A weboldalad elkészül. Mi pedig gondoskodunk róla, hogy működjön is — folyamatos technikai és tartalmi karbantartás."
+>
+  <!-- HERO -->
+  <section class="relative overflow-hidden border-b border-line bg-base pt-16 pb-24 md:pt-24 md:pb-32">
+    <div class="pointer-events-none absolute -right-40 -top-40 h-[32rem] w-[32rem] rounded-full bg-accent/20 blur-[120px]"></div>
+
+    <div class="relative mx-auto grid max-w-7xl items-center gap-16 px-6 md:grid-cols-2">
+      <div>
+        <span class="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-4 py-1.5 text-xs font-medium uppercase tracking-wider text-accent">
+          Weboldal karbantartás
+        </span>
+
+        <h1 class="mt-6 text-4xl font-bold leading-[1.1] tracking-tight text-white md:text-5xl">
+          A weboldalad elkészült.<br />
+          <span class="bg-gradient-to-r from-accent to-accent-soft bg-clip-text text-transparent">Mi gondoskodunk róla, hogy működjön is.</span>
+        </h1>
+
+        <p class="mt-6 max-w-lg text-lg text-muted">
+          Egy weboldal nem egy egyszer elkészített projekt, amit utána magára lehet
+          hagyni. Mi átvesszük tőled a technikai és tartalmi karbantartást, így neked nem
+          kell frissítésekkel, hibákkal vagy technikai problémákkal foglalkoznod.
+        </p>
+
+        <a href="/#ajanlatkeres" class="mt-8 inline-block rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 ease-out hover:shadow-[0_0_25px_5px_rgba(255,77,46,0.35)]">
+          Kérem a weboldalam karbantartását
+        </a>
+
+        <p class="mt-5 text-sm text-muted">Gyors reakció · Folyamatos felügyelet · Biztonságos működés</p>
+      </div>
+
+      <div class="relative">
+        <Image
+          src={karbantartasKep}
+          alt="Weboldal karbantartás"
+          class="mx-auto w-full max-w-lg rounded-2xl"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- A MEGÚJÍTÁS CSAK AZ ELSŐ LÉPÉS -->
+  <section class="border-b border-line bg-surface/40 py-20">
+    <div class="mx-auto max-w-4xl px-6 text-center">
+      <span class="text-xs font-semibold uppercase tracking-wider text-accent">Egy weboldal nem készül el örökre</span>
+      <h2 class="mt-3 text-3xl font-bold text-white md:text-4xl">A megújítás csak az első lépés</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-muted">
+        Egy modern weboldal elkészítése után sem áll meg az élet. Új rendszerfrissítések
+        jelennek meg, változnak a technológiák, és idővel minden weboldalon előfordulhatnak
+        hibák. Ha senki nem foglalkozik vele rendszeresen, egy ma gyors weboldal néhány év
+        alatt ugyanoda kerülhet, ahonnan indult. <span class="text-white">Mi azért vagyunk, hogy ez ne történjen meg.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- HA MAGÁRA HAGYOD - PROBLÉMÁK -->
+  <section class="border-b border-line bg-base py-24">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mx-auto max-w-2xl text-center">
+        <span class="text-xs font-semibold uppercase tracking-wider text-accent">Mi történik, ha magára hagyod?</span>
+        <h2 class="mt-3 text-3xl font-bold text-white md:text-4xl">A problémák sokszor akkor derülnek ki, amikor már késő</h2>
+      </div>
+
+      <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {problems.map((item) => (
+          <div class="rounded-2xl border border-line bg-surface p-6">
+            <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-accent/10 text-accent">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d={item.icon} /></svg>
+            </div>
+            <h3 class="mt-4 font-semibold text-white">{item.title}</h3>
+            <p class="mt-2 text-sm text-muted">{item.text}</p>
+          </div>
+        ))}
+      </div>
+
+      <p class="mx-auto mt-12 max-w-2xl text-center text-lg font-medium text-white">
+        Egy weboldal karbantartása nem felesleges plusz — a hosszú távú működésének része.
+      </p>
+    </div>
+  </section>
+
+  <!-- MIT TARTALMAZ -->
+  <section class="border-b border-line bg-surface/40 py-24">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="mx-auto max-w-2xl text-center">
+        <span class="text-xs font-semibold uppercase tracking-wider text-accent">Mit tartalmaz a karbantartás?</span>
+        <h2 class="mt-3 text-3xl font-bold text-white md:text-4xl">Minden, amire hosszú távon szükséged van</h2>
+        <p class="mt-4 text-muted">
+          A karbantartás nálunk nem merül ki abban, hogy akkor nyúlunk az oldalhoz, amikor
+          már valami elromlott. A cél, hogy a problémákat lehetőleg még azelőtt észrevegyük,
+          hogy azok neked vagy az ügyfeleidnek problémát okoznának.
+        </p>
+      </div>
+
+      <div class="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {included.map((item) => (
+          <div class="rounded-2xl border border-line bg-base p-5">
+            <span class="text-xs font-bold text-accent">{item.num}</span>
+            <h3 class="mt-2 font-semibold text-white">{item.title}</h3>
+            <p class="mt-2 text-sm text-muted">{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- TE CSAK SZÓLSZ -->
+  <section class="border-b border-line bg-base py-20">
+    <div class="mx-auto max-w-4xl px-6">
+      <div class="rounded-3xl border border-accent/30 bg-surface p-8 sm:p-12">
+        <span class="text-xs font-semibold uppercase tracking-wider text-accent">Te csak szólsz. Mi megcsináljuk.</span>
+        <h2 class="mt-2 text-2xl font-bold text-white sm:text-3xl">Nem kell fejlesztőt keresned minden apró módosításhoz</h2>
+        <p class="mt-4 text-muted">
+          Megváltozott a telefonszámod? Felkerült egy új szolgáltatás? Új képet szeretnél az
+          oldalra? Megjelent egy új referencia? Át kell írni egy szöveget?
+        </p>
+        <p class="mt-4 text-white">
+          Nem kell belépned a weboldal kezelőfelületére, és nem kell órákat töltened a
+          megoldással. Egyszerűen jelzed nekünk, mire van szükséged, mi pedig elvégezzük a
+          módosítást.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOGYAN MŰKÖDIK -->
+  <section class="border-b border-line bg-surface/40 py-24">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mx-auto max-w-2xl text-center">
+        <span class="text-xs font-semibold uppercase tracking-wider text-accent">Hogyan működik?</span>
+        <h2 class="mt-3 text-3xl font-bold text-white md:text-4xl">Mi átvesszük tőled a weboldallal járó feladatokat</h2>
+      </div>
+
+      <div class="relative mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
+        <div class="absolute left-0 right-0 top-6 hidden h-px bg-line lg:block"></div>
+        {howSteps.map(([num, title, text]) => (
+          <div class="relative">
+            <div class="relative z-10 flex h-12 w-12 items-center justify-center rounded-full border border-line bg-base text-sm font-bold text-accent">
+              {num}
+            </div>
+            <h3 class="mt-4 font-semibold text-white">{title}</h3>
+            <p class="mt-2 text-sm text-muted">{text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ELŐTTE / MEGÚJÍTÁS / KARBANTARTÁS FOLYAMATÁBRA -->
+  <section class="border-b border-line bg-base py-24">
+    <div class="mx-auto max-w-4xl px-6 text-center">
+      <span class="text-xs font-semibold uppercase tracking-wider text-accent">A megújítás csak az első lépés</span>
+      <h2 class="mt-3 text-3xl font-bold text-white md:text-4xl">Új weboldal → folyamatos karbantartás → hosszú távú működés</h2>
+
+      <div class="mt-14 grid gap-6 sm:grid-cols-3">
+        <div class="rounded-2xl border border-line bg-surface p-6">
+          <span class="text-xs font-semibold uppercase tracking-wider text-muted">Előtte</span>
+          <p class="mt-3 text-sm text-white">Elavult, lassú és nehezen kezelhető weboldal.</p>
+        </div>
+        <div class="rounded-2xl border border-accent/40 bg-surface p-6">
+          <span class="text-xs font-semibold uppercase tracking-wider text-accent">Megújítás</span>
+          <p class="mt-3 text-sm text-white">Modern, gyors és ügyfélszerzésre optimalizált weboldal.</p>
+        </div>
+        <div class="rounded-2xl border border-line bg-surface p-6">
+          <span class="text-xs font-semibold uppercase tracking-wider text-muted">Karbantartás</span>
+          <p class="mt-3 text-sm text-white">Folyamatos frissítés, biztonság, tartalomkezelés és felügyelet.</p>
+        </div>
+      </div>
+
+      <p class="mx-auto mt-10 max-w-xl text-muted">
+        Így nem csak most oldjuk meg a problémát, hanem hosszú távon is gondoskodunk a
+        weboldaladról.
+      </p>
+    </div>
+  </section>
+
+  <!-- MIÉRT ÉRI MEG HAVONTA -->
+  <section class="border-b border-line bg-surface/40 py-24">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="mx-auto max-w-2xl text-center">
+        <span class="text-xs font-semibold uppercase tracking-wider text-accent">Miért éri meg havonta?</span>
+        <h2 class="mt-3 text-3xl font-bold text-white md:text-4xl">Nem csak egy weboldalt kapsz. Nyugalmat is.</h2>
+        <p class="mt-4 text-muted">
+          A havi karbantartás nem egyszerűen néhány technikai frissítést jelent — azt
+          jelenti, hogy van valaki, akihez fordulhatsz, ha a weboldaladdal kapcsolatban
+          problémád vagy kérésed van.
+        </p>
+      </div>
+
+      <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {benefits.map((item) => (
+          <div class="rounded-2xl border border-line bg-base p-6">
+            <h3 class="font-semibold text-white">{item.title}</h3>
+            <p class="mt-2 text-sm text-muted">{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- MIT KAPSZ - CHECKLIST -->
+  <section class="border-b border-line bg-base py-24">
+    <div class="mx-auto max-w-3xl px-6">
+      <div class="text-center">
+        <span class="text-xs font-semibold uppercase tracking-wider text-accent">Mit kapsz a karbantartással?</span>
+        <h2 class="mt-3 text-3xl font-bold text-white md:text-4xl">Egy weboldalt, amivel nem kell foglalkoznod</h2>
+      </div>
+
+      <div class="mt-12 grid gap-3 sm:grid-cols-2">
+        {checklist.map((text) => (
+          <div class="flex items-center gap-3 rounded-xl border border-line bg-surface px-4 py-3 text-sm text-white/90">
+            <svg class="h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-7.4 7.4a1 1 0 01-1.4 0L3.3 9.5a1 1 0 111.4-1.4l3.9 3.9 6.7-6.7a1 1 0 011.4 0z" clip-rule="evenodd" /></svg>
+            {text}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- GYORS REAKCIÓ - STAT SÁV -->
+  <section class="border-b border-line bg-surface/40 py-16">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="mx-auto max-w-2xl text-center">
+        <span class="text-xs font-semibold uppercase tracking-wider text-accent">Gyors reakció, folyamatos felügyelet</span>
+        <h2 class="mt-3 text-2xl font-bold text-white sm:text-3xl">Nem kell napokig keresned valakit, ha probléma van</h2>
+      </div>
+
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {responseStats.map(([title, text]) => (
+          <div class="text-center">
+            <p class="text-2xl font-bold text-accent">{title}</p>
+            <p class="mt-1 text-sm text-muted">{text}</p>
+          </div>
+        ))}
+      </div>
+      <p class="mx-auto mt-10 max-w-md text-center text-xs text-muted">
+        Az egyes módosítások és javítások teljesítési ideje a feladat összetettségétől függ.
+      </p>
+    </div>
+  </section>
+
+  <!-- KINEK AJÁNLJUK -->
+  <section class="border-b border-line bg-base py-24">
+    <div class="mx-auto max-w-4xl px-6">
+      <div class="text-center">
+        <span class="text-xs font-semibold uppercase tracking-wider text-accent">Kinek ajánljuk?</span>
+        <h2 class="mt-3 text-3xl font-bold text-white md:text-4xl">Neked, ha nem szeretnél a weboldaladdal foglalkozni</h2>
+      </div>
+
+      <div class="mt-12 space-y-4">
+        {audience.map(([title, text]) => (
+          <div class="flex items-start gap-4 rounded-2xl border border-line bg-surface p-5">
+            <svg class="mt-0.5 h-5 w-5 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-7.4 7.4a1 1 0 01-1.4 0L3.3 9.5a1 1 0 111.4-1.4l3.9 3.9 6.7-6.7a1 1 0 011.4 0z" clip-rule="evenodd" /></svg>
+            <div>
+              <h3 class="font-semibold text-white">{title}</h3>
+              <p class="mt-1 text-sm text-muted">{text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="border-b border-line bg-surface/40 py-24">
+    <div class="mx-auto max-w-3xl px-6 text-center">
+      <h2 class="text-2xl font-bold text-white sm:text-3xl">A weboldalad már megújult. Most tartsuk is olyan állapotban.</h2>
+      <p class="mx-auto mt-4 max-w-xl text-muted">
+        Egy weboldalmegújítás jelentős lépés, de önmagában nem garantálja, hogy évek múlva
+        is ugyanolyan gyors és biztonságos lesz. A karbantartással a befektetésed hosszabb
+        távon is értéket teremthet.
+      </p>
+      <a href="/#ajanlatkeres" class="mt-8 inline-block rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 ease-out hover:shadow-[0_0_25px_5px_rgba(255,77,46,0.35)]">
+        Kérem a karbantartási szolgáltatást
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-base py-24">
+    <div class="mx-auto max-w-3xl px-6">
+      <div class="text-center">
+        <span class="text-xs font-semibold uppercase tracking-wider text-accent">Gyakran ismételt kérdések</span>
+        <h2 class="mt-3 text-3xl font-bold text-white md:text-4xl">Amit érdemes tudnod</h2>
+      </div>
+
+      <div class="mt-12 space-y-3">
+        {faq.map(([question, answer]) => (
+          <details class="group rounded-2xl border border-line bg-surface px-5 py-4">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-white">
+              {question}
+              <svg class="h-4 w-4 shrink-0 text-accent transition-transform duration-300 ease-out group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.3 7.3a1 1 0 011.4 0L10 10.6l3.3-3.3a1 1 0 111.4 1.4l-4 4a1 1 0 01-1.4 0l-4-4a1 1 0 010-1.4z" clip-rule="evenodd" /></svg>
+            </summary>
+            <p class="mt-3 text-sm text-muted">{answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -99,3 +99,69 @@ body {
   transform: translateY(-100%);
   opacity: 0;
 }
+
+.blog-prose {
+  color: var(--color-muted);
+  line-height: 1.75;
+}
+
+.blog-prose h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+.blog-prose h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: white;
+}
+
+.blog-prose p {
+  margin-bottom: 1.25rem;
+}
+
+.blog-prose strong {
+  color: white;
+  font-weight: 600;
+}
+
+.blog-prose a {
+  color: var(--color-accent);
+  text-underline-offset: 3px;
+}
+
+.blog-prose a:hover {
+  text-decoration: underline;
+}
+
+.blog-prose ul,
+.blog-prose ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.blog-prose li {
+  margin-bottom: 0.5rem;
+}
+
+.blog-prose ul {
+  list-style: disc;
+}
+
+.blog-prose ol {
+  list-style: decimal;
+}
+
+.blog-prose hr {
+  margin: 2.5rem 0;
+  border-color: var(--color-line);
+}
+
+.blog-prose em {
+  color: rgba(255, 255, 255, 0.7);
+}

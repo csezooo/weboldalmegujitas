@@ -1,0 +1,72 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content, headings } = await render(post);
+const toc = headings.filter((h) => h.depth === 2);
+
+const dateFormatter = new Intl.DateTimeFormat('hu-HU', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<Layout title={`${post.data.title} | Blog`} description={post.data.description}>
+  <section class="bg-base py-24">
+    <div class="mx-auto max-w-6xl px-6">
+      <a href="/blog" class="inline-flex items-center gap-2 text-sm text-muted transition-colors duration-300 ease-out hover:text-white" data-reveal>
+        <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M9.7 16.7a1 1 0 01-1.4 0l-5-5a1 1 0 010-1.4l5-5a1 1 0 011.4 1.4L6.4 10l3.3 3.3a1 1 0 010 1.4z" clip-rule="evenodd" /></svg>
+        Vissza a bloghoz
+      </a>
+
+      <span class="mt-6 block text-xs font-semibold uppercase tracking-wider text-accent" data-reveal>{post.data.category}</span>
+      <h1 class="mt-2 max-w-3xl text-3xl font-bold text-white md:text-4xl" data-reveal>{post.data.title}</h1>
+
+      <div class="mt-4 flex items-center gap-4 text-sm text-muted" data-reveal>
+        <span>{dateFormatter.format(post.data.pubDate)}</span>
+        <span>·</span>
+        <span>{post.data.readingTime}</span>
+      </div>
+
+      <div class="mt-16 grid gap-12 md:grid-cols-[240px_1fr]">
+        {toc.length > 0 && (
+          <aside class="md:sticky md:top-24 md:self-start">
+            <p class="mb-3 text-xs font-semibold uppercase tracking-wider text-muted">Tartalom</p>
+            <nav class="space-y-1 border-l border-line pl-4">
+              {toc.map((heading) => (
+                <a
+                  href={`#${heading.slug}`}
+                  class="block py-1.5 text-sm text-muted transition-colors duration-300 ease-out hover:text-white"
+                >
+                  {heading.text}
+                </a>
+              ))}
+            </nav>
+          </aside>
+        )}
+
+        <div>
+          <div class="blog-prose max-w-2xl" data-reveal>
+            <Content />
+          </div>
+
+          <div class="mt-16 max-w-2xl rounded-3xl border border-line bg-surface px-8 py-10 text-center sm:px-12" data-reveal>
+            <h2 class="text-2xl font-bold text-white sm:text-3xl">Elavultnak érzed a weboldalad?</h2>
+            <p class="mx-auto mt-3 max-w-md text-sm text-muted">
+              Kérj egy ingyenes állapotfelmérést és árajánlatot — 24 órán belül jelentkezünk.
+            </p>
+            <a href="/#ajanlatkeres" class="mt-6 inline-block rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 ease-out hover:shadow-[0_0_25px_5px_rgba(255,77,46,0.35)]">
+              Ingyenes árajánlatot kérek
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
